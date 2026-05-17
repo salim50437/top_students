@@ -4,26 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>الطلبة الأوائل للفصل الدراسي الثاني بمدرسة الخيرات للتعليم الأساسي 5-8 للعام الدراسي 2025 - 2026 -الدور الأول - الفصل الدراسي الثاني</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-
   <style>
     :root {
       --primary: #14532d;
       --primary-2: #166534;
-      --primary-3: #0f3f23;
       --gold: #d9a441;
       --gold-2: #f4d58d;
-      --cream: #fff8ea;
       --ink: #17211b;
       --muted: #667085;
       --danger: #b42318;
       --success: #027a48;
-      --bg: #f6f2e8;
-      --card: rgba(255, 255, 255, 0.9);
+      --card: rgba(255, 255, 255, 0.92);
       --shadow: 0 24px 70px rgba(20, 83, 45, 0.16);
       --radius: 28px;
     }
@@ -77,24 +71,13 @@
     .hero {
       position: relative;
       border-radius: 34px;
-      padding: 34px 34px 30px;
+      padding: 34px;
       color: #fff;
       overflow: hidden;
       background:
         linear-gradient(135deg, rgba(20, 83, 45, 0.96), rgba(22, 101, 52, 0.92)),
         url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f4d58d' stroke-opacity='.24' stroke-width='1.4'%3E%3Cpath d='M60 8l12 24 26 4-19 18 5 26-24-13-24 13 5-26-19-18 26-4z'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3C/g%3E%3C/svg%3E");
       box-shadow: var(--shadow);
-      isolation: isolate;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(244, 213, 141, 0.32), transparent 24%),
-        radial-gradient(circle at 88% 70%, rgba(255, 255, 255, 0.16), transparent 26%);
-      z-index: -1;
     }
 
     .badge {
@@ -105,7 +88,6 @@
       border: 1px solid rgba(244, 213, 141, 0.55);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.10);
-      backdrop-filter: blur(12px);
       font-size: 14px;
       font-weight: 700;
       color: var(--gold-2);
@@ -120,10 +102,10 @@
     }
 
     h1 {
-      max-width: 940px;
+      max-width: 980px;
       margin: 18px 0 12px;
-      font-size: clamp(28px, 5vw, 54px);
-      line-height: 1.35;
+      font-size: clamp(27px, 4.6vw, 50px);
+      line-height: 1.42;
       font-weight: 900;
       letter-spacing: -1px;
     }
@@ -153,29 +135,17 @@
       font-size: 17px;
       font-weight: 900;
       color: var(--primary);
-      background: rgba(255, 255, 255, 0.76);
+      background: rgba(255, 255, 255, 0.78);
       box-shadow: 0 14px 34px rgba(20, 83, 45, 0.10);
       transition: transform .2s ease, background .2s ease, color .2s ease;
     }
 
     .tab-btn:hover { transform: translateY(-2px); }
+    .tab-btn.active { color: #fff; background: linear-gradient(135deg, var(--primary), var(--primary-2)); }
 
-    .tab-btn.active {
-      color: #fff;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-    }
-
-    .panels-shell {
-      display: grid;
-      min-height: 650px;
-    }
-
+    .panels-shell { display: grid; min-height: 650px; }
     .panel { display: none; }
-
-    .panel.active {
-      display: block;
-      animation: fadeUp .35s ease both;
-    }
+    .panel.active { display: block; animation: fadeUp .35s ease both; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(12px); }
@@ -200,26 +170,10 @@
       background: linear-gradient(135deg, rgba(255,255,255,.76), rgba(244,213,141,.22));
     }
 
-    .card-header h2 {
-      margin: 0;
-      color: var(--primary);
-      font-size: 24px;
-      font-weight: 900;
-    }
+    .card-header h2 { margin: 0; color: var(--primary); font-size: 24px; font-weight: 900; }
+    .card-header p { margin: 7px 0 0; color: var(--muted); line-height: 1.8; font-size: 14px; }
 
-    .card-header p {
-      margin: 7px 0 0;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    .card-body {
-      flex: 1;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-    }
+    .card-body { flex: 1; padding: 24px; display: flex; flex-direction: column; }
 
     .admin-grid {
       display: grid;
@@ -261,54 +215,56 @@
       font-weight: 600;
     }
 
-    .dropzone {
+    label { color: var(--primary); font-size: 15px; font-weight: 900; }
+    .field-stack { display: grid; gap: 10px; margin-bottom: 14px; }
+
+    .input-row { display: flex; gap: 12px; }
+
+    .input,
+    .textarea {
+      width: 100%;
+      padding: 13px 18px;
+      border: 1px solid rgba(20, 83, 45, 0.18);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.94);
+      outline: none;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .input { min-height: 56px; }
+    .textarea { min-height: 260px; resize: vertical; line-height: 1.9; font-size: 15px; direction: rtl; }
+
+    .input:focus,
+    .textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 5px rgba(217, 164, 65, 0.15);
+    }
+
+    .paste-box {
       display: grid;
-      place-items: center;
-      min-height: 245px;
-      padding: 26px;
-      border: 2px dashed rgba(20, 83, 45, 0.28);
+      gap: 12px;
+      padding: 18px;
+      border: 1px dashed rgba(20, 83, 45, 0.24);
       border-radius: 24px;
       background: linear-gradient(135deg, rgba(20,83,45,.045), rgba(217,164,65,.075));
-      text-align: center;
-      transition: border-color .2s ease, background .2s ease, transform .2s ease;
     }
 
-    .dropzone.dragover {
-      border-color: var(--gold);
-      background: rgba(217, 164, 65, 0.13);
-      transform: scale(1.01);
+    .paste-actions,
+    .login-actions,
+    .report-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .upload-icon {
-      width: 78px;
-      height: 78px;
-      border-radius: 24px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 14px;
-      color: #fff;
-      font-size: 34px;
-      background: linear-gradient(135deg, var(--primary), var(--gold));
-      box-shadow: 0 18px 32px rgba(20, 83, 45, 0.18);
-    }
+    .report-actions { justify-content: center; padding: 0 22px 24px; }
 
-    .dropzone h3 {
-      margin: 0 0 8px;
-      font-size: 21px;
-      color: var(--primary);
-      font-weight: 900;
-    }
-
-    .dropzone p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    input[type="file"] { display: none; }
-
-    .btn,
-    .file-label {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -324,27 +280,15 @@
       color: #fff;
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
       box-shadow: 0 14px 26px rgba(20, 83, 45, 0.18);
-      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    .btn:hover,
-    .file-label:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 34px rgba(20, 83, 45, 0.22);
-    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(20, 83, 45, 0.22); }
+    .btn.secondary { color: var(--primary); background: #fff; border: 1px solid rgba(20, 83, 45, 0.16); box-shadow: 0 10px 24px rgba(20, 83, 45, 0.08); }
+    .btn.danger { background: linear-gradient(135deg, #7f1d1d, #b42318); }
 
-    .btn.secondary {
-      color: var(--primary);
-      background: #fff;
-      border: 1px solid rgba(20, 83, 45, 0.16);
-      box-shadow: 0 10px 24px rgba(20, 83, 45, 0.08);
-    }
-
-    .btn.danger {
-      background: linear-gradient(135deg, #7f1d1d, #b42318);
-    }
-
-    .note {
+    .note,
+    .print-note {
       margin-top: 16px;
       padding: 14px 16px;
       border-radius: 18px;
@@ -352,8 +296,10 @@
       color: var(--primary);
       line-height: 1.8;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
     }
+
+    .print-note { margin: 0 22px 16px; text-align: center; }
 
     .status {
       display: none;
@@ -369,50 +315,7 @@
     .status.success { color: var(--success); background: rgba(2, 122, 72, 0.10); }
     .status.error { color: var(--danger); background: rgba(180, 35, 24, 0.10); }
 
-    .search-box {
-      display: grid;
-      gap: 14px;
-      max-width: 760px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    label {
-      color: var(--primary);
-      font-size: 15px;
-      font-weight: 900;
-    }
-
-    .field-stack {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .input-row {
-      display: flex;
-      gap: 12px;
-    }
-
-    .input {
-      width: 100%;
-      min-height: 56px;
-      padding: 13px 18px;
-      border: 1px solid rgba(20, 83, 45, 0.18);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.94);
-      outline: none;
-      font-family: inherit;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--ink);
-      transition: border-color .2s ease, box-shadow .2s ease;
-    }
-
-    .input:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 5px rgba(217, 164, 65, 0.15);
-    }
+    .search-box { display: grid; gap: 14px; max-width: 760px; margin: 0 auto; width: 100%; }
 
     .result {
       display: none;
@@ -426,10 +329,7 @@
       box-shadow: 0 22px 58px rgba(20, 83, 45, 0.12);
     }
 
-    .result.show {
-      display: block;
-      animation: fadeUp .35s ease both;
-    }
+    .result.show { display: block; animation: fadeUp .35s ease both; }
 
     .certificate-top {
       position: relative;
@@ -455,21 +355,8 @@
       border: 1px solid rgba(255,255,255,.22);
     }
 
-    .certificate-top h3 {
-      margin: 0;
-      padding-left: 88px;
-      font-size: clamp(24px, 3vw, 34px);
-      font-weight: 900;
-      line-height: 1.5;
-    }
-
-    .certificate-top p {
-      margin: 7px 0 0;
-      padding-left: 88px;
-      color: rgba(255, 255, 255, .88);
-      font-weight: 700;
-      line-height: 1.8;
-    }
+    .certificate-top h3 { margin: 0; padding-left: 88px; font-size: clamp(24px, 3vw, 34px); font-weight: 900; line-height: 1.5; }
+    .certificate-top p { margin: 7px 0 0; padding-left: 88px; color: rgba(255, 255, 255, .88); font-weight: 700; line-height: 1.8; }
 
     .student-highlight {
       margin: 22px;
@@ -480,20 +367,8 @@
       border: 1px solid rgba(217, 164, 65, 0.26);
     }
 
-    .student-highlight span {
-      display: block;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .student-highlight strong {
-      display: block;
-      color: var(--primary);
-      font-size: clamp(25px, 4vw, 42px);
-      font-weight: 900;
-      line-height: 1.6;
-    }
+    .student-highlight span { display: block; color: var(--muted); font-size: 14px; font-weight: 900; }
+    .student-highlight strong { display: block; color: var(--primary); font-size: clamp(25px, 4vw, 42px); font-weight: 900; line-height: 1.6; }
 
     .excellence-quote {
       max-width: 760px;
@@ -515,53 +390,10 @@
       padding: 0 22px 22px;
     }
 
-    .field {
-      padding: 16px;
-      border-radius: 19px;
-      background: rgba(20, 83, 45, 0.055);
-      border: 1px solid rgba(20, 83, 45, 0.08);
-    }
-
-    .field.featured {
-      background: rgba(217, 164, 65, 0.13);
-      border-color: rgba(217, 164, 65, 0.22);
-    }
-
-    .field span {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .field strong {
-      display: block;
-      color: var(--primary);
-      font-size: 18px;
-      line-height: 1.6;
-      word-break: break-word;
-    }
-
-    .print-note {
-      margin: 0 22px 16px;
-      padding: 12px 16px;
-      border-radius: 16px;
-      text-align: center;
-      color: var(--primary);
-      background: rgba(20, 83, 45, 0.07);
-      border: 1px solid rgba(20, 83, 45, 0.10);
-      font-weight: 900;
-      line-height: 1.8;
-    }
-
-    .report-actions {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 22px 24px;
-      flex-wrap: wrap;
-    }
+    .field { padding: 16px; border-radius: 19px; background: rgba(20, 83, 45, 0.055); border: 1px solid rgba(20, 83, 45, 0.08); }
+    .field.featured { background: rgba(217, 164, 65, 0.13); border-color: rgba(217, 164, 65, 0.22); }
+    .field span { display: block; margin-bottom: 6px; color: var(--muted); font-size: 13px; font-weight: 800; }
+    .field strong { display: block; color: var(--primary); font-size: 18px; line-height: 1.6; word-break: break-word; }
 
     .empty {
       display: none;
@@ -579,35 +411,10 @@
 
     .empty.show { display: block; }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .stat {
-      padding: 16px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(20,83,45,.10);
-      text-align: center;
-    }
-
-    .stat b {
-      display: block;
-      color: var(--primary);
-      font-size: 25px;
-      font-weight: 900;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 800;
-    }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+    .stat { padding: 16px; border-radius: 20px; background: rgba(255,255,255,.78); border: 1px solid rgba(20,83,45,.10); text-align: center; }
+    .stat b { display: block; color: var(--primary); font-size: 25px; font-weight: 900; }
+    .stat span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; font-weight: 800; }
 
     .table-wrap {
       margin-top: 18px;
@@ -618,43 +425,10 @@
       background: #fff;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 780px;
-      font-size: 14px;
-    }
-
-    th, td {
-      padding: 13px 14px;
-      border-bottom: 1px solid rgba(20, 83, 45, 0.08);
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    th {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-      color: #fff;
-      background: var(--primary);
-      font-weight: 900;
-    }
-
-    td {
-      color: #26342b;
-      font-weight: 700;
-    }
-
-    .data-management-box {
-      margin-top: 18px;
-      background: rgba(180, 35, 24, 0.07);
-      border-color: rgba(180, 35, 24, 0.16);
-    }
-
-    .data-management-box h3 {
-      color: var(--danger);
-    }
+    table { width: 100%; border-collapse: collapse; min-width: 780px; font-size: 14px; }
+    th, td { padding: 13px 14px; border-bottom: 1px solid rgba(20, 83, 45, 0.08); text-align: right; white-space: nowrap; }
+    th { position: sticky; top: 0; z-index: 1; color: #fff; background: var(--primary); font-weight: 900; }
+    td { color: #26342b; font-weight: 700; }
 
     .privacy-card {
       display: flex;
@@ -682,17 +456,12 @@
       font-size: 22px;
     }
 
+    .data-management-box { margin-top: 18px; background: rgba(180, 35, 24, 0.07); border-color: rgba(180, 35, 24, 0.16); }
+    .data-management-box h3 { color: var(--danger); }
+
     .admin-content { display: none; }
     .admin-content.show { display: block; }
     .login-area.hide { display: none; }
-
-    .login-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
 
     footer {
       margin-top: 22px;
@@ -707,185 +476,46 @@
       font-weight: 800;
     }
 
-    footer .designer {
-      color: #8a5b0e;
-      font-weight: 900;
-    }
+    footer .designer { color: #8a5b0e; font-weight: 900; }
 
     @media (max-width: 960px) {
       .admin-grid { grid-template-columns: 1fr; }
-      .card { min-height: auto; }
-      .panels-shell { min-height: auto; }
+      .card, .panels-shell { min-height: auto; }
     }
 
     @media (max-width: 700px) {
-      .page {
-        width: min(100% - 22px, 1180px);
-        padding-top: 14px;
-      }
-
+      .page { width: min(100% - 22px, 1180px); padding-top: 14px; }
       .hero { padding: 28px 22px; }
       .tabs, .stats, .result-grid { grid-template-columns: 1fr; }
       .input-row { flex-direction: column; }
-      .btn, .file-label { width: 100%; }
+      .btn { width: 100%; }
       .card-body, .card-header { padding: 18px; }
-      .certificate-top h3,
-      .certificate-top p { padding-left: 0; }
-      .certificate-top::after {
-        position: static;
-        margin-bottom: 14px;
-      }
+      .certificate-top h3, .certificate-top p { padding-left: 0; }
+      .certificate-top::after { position: static; margin-bottom: 14px; }
     }
 
     @media print {
-      @page {
-        size: A4 portrait;
-        margin: 10mm;
-      }
-
-      * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
-
-      html,
-      body {
-        width: 210mm;
-        min-height: 297mm;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: #fff !important;
-        overflow: hidden !important;
-      }
-
-      body * {
-        visibility: hidden !important;
-      }
-
-      #result,
-      #result * {
-        visibility: visible !important;
-      }
-
-      .page,
-      .panels-shell,
-      #studentPanel,
-      .card,
-      .card-body {
-        display: block !important;
-        width: 100% !important;
-        min-height: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border: 0 !important;
-        box-shadow: none !important;
-        background: #fff !important;
-      }
-
-      #result {
-        position: absolute !important;
-        top: 0 !important;
-        right: 0 !important;
-        left: 0 !important;
-        display: block !important;
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-        border: 2px solid #d9a441 !important;
-        border-radius: 18px !important;
-        box-shadow: none !important;
-        overflow: hidden !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-      }
-
-      .certificate-top {
-        padding: 14mm 12mm 10mm !important;
-      }
-
-      .certificate-top::after {
-        left: 12mm !important;
-        top: 12mm !important;
-        width: 52px !important;
-        height: 52px !important;
-        border-radius: 18px !important;
-        font-size: 30px !important;
-      }
-
-      .certificate-top h3 {
-        font-size: 25px !important;
-        line-height: 1.45 !important;
-        padding-left: 70px !important;
-      }
-
-      .certificate-top p {
-        font-size: 13px !important;
-        line-height: 1.7 !important;
-        padding-left: 70px !important;
-      }
-
-      .student-highlight {
-        margin: 12mm 10mm 7mm !important;
-        padding: 8mm !important;
-        border-radius: 18px !important;
-      }
-
-      .student-highlight span {
-        font-size: 12px !important;
-      }
-
-      .student-highlight strong {
-        font-size: 28px !important;
-        line-height: 1.45 !important;
-      }
-
-      .excellence-quote {
-        margin-top: 6px !important;
-        padding: 8px 12px !important;
-        font-size: 14px !important;
-        line-height: 1.7 !important;
-      }
-
-      .result-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px !important;
-        padding: 0 10mm 8mm !important;
-      }
-
-      .field {
-        padding: 10px 12px !important;
-        border-radius: 14px !important;
-      }
-
-      .field span {
-        font-size: 11px !important;
-        margin-bottom: 3px !important;
-      }
-
-      .field strong {
-        font-size: 15px !important;
-        line-height: 1.45 !important;
-      }
-
-      .print-note {
-        display: block !important;
-        margin: 0 10mm 8mm !important;
-        padding: 9px 12px !important;
-        font-size: 12px !important;
-        line-height: 1.6 !important;
-      }
-
-      .tabs,
-      #adminPanel,
-      footer,
-      .search-box,
-      .hero,
-      .card-header,
-      .empty,
-      .note,
-      .report-actions {
-        display: none !important;
-      }
+      @page { size: A4 portrait; margin: 10mm; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      html, body { width: 210mm; min-height: 297mm; margin: 0 !important; padding: 0 !important; background: #fff !important; overflow: hidden !important; }
+      body * { visibility: hidden !important; }
+      #result, #result * { visibility: visible !important; }
+      .page, .panels-shell, #studentPanel, .card, .card-body { display: block !important; width: 100% !important; min-height: auto !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: #fff !important; }
+      #result { position: absolute !important; top: 0 !important; right: 0 !important; left: 0 !important; display: block !important; width: 100% !important; max-width: none !important; margin: 0 !important; border: 2px solid #d9a441 !important; border-radius: 18px !important; box-shadow: none !important; overflow: hidden !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+      .certificate-top { padding: 14mm 12mm 10mm !important; }
+      .certificate-top::after { left: 12mm !important; top: 12mm !important; width: 52px !important; height: 52px !important; border-radius: 18px !important; font-size: 30px !important; }
+      .certificate-top h3 { font-size: 25px !important; line-height: 1.45 !important; padding-left: 70px !important; }
+      .certificate-top p { font-size: 13px !important; line-height: 1.7 !important; padding-left: 70px !important; }
+      .student-highlight { margin: 12mm 10mm 7mm !important; padding: 8mm !important; border-radius: 18px !important; }
+      .student-highlight span { font-size: 12px !important; }
+      .student-highlight strong { font-size: 28px !important; line-height: 1.45 !important; }
+      .excellence-quote { margin-top: 6px !important; padding: 8px 12px !important; font-size: 14px !important; line-height: 1.7 !important; }
+      .result-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; padding: 0 10mm 8mm !important; }
+      .field { padding: 10px 12px !important; border-radius: 14px !important; }
+      .field span { font-size: 11px !important; margin-bottom: 3px !important; }
+      .field strong { font-size: 15px !important; line-height: 1.45 !important; }
+      .print-note { display: block !important; margin: 0 10mm 8mm !important; padding: 9px 12px !important; font-size: 12px !important; line-height: 1.6 !important; }
+      .tabs, #adminPanel, footer, .search-box, .hero, .card-header, .empty, .note, .report-actions { display: none !important; }
     }
   </style>
 </head>
@@ -894,10 +524,7 @@
     <section class="hero">
       <div class="badge"><span></span> نظام إلكتروني لعرض سجل الطلبة الأوائل</div>
       <h1>الطلبة الأوائل للفصل الدراسي الثاني بمدرسة الخيرات للتعليم الأساسي 5-8 للعام الدراسي 2025 - 2026 -الدور الأول - الفصل الدراسي الثاني</h1>
-      <p>
-        منصة مدرسية أنيقة تتيح للإدارة رفع ملف Excel الخاص بسجل الطلبة الأوائل،
-        وتمكّن الطالب أو ولي الأمر من البحث بالرقم المدني لاستعراض بيانات الطالب وترتيبه بدقة وسهولة.
-      </p>
+      <p>منصة مدرسية أنيقة تتيح للإدارة إضافة بيانات الطلبة الأوائل بالنسخ واللصق من Excel، وتمكّن الطالب أو ولي الأمر من البحث بالرقم المدني لاستعراض بيانات الطالب وترتيبه بدقة وسهولة.</p>
     </section>
 
     <div class="tabs" role="tablist" aria-label="اختيار النافذة">
@@ -910,7 +537,7 @@
         <article class="card report-box">
           <div class="card-header">
             <h2>البحث عن سجل الطالب</h2>
-            <p>أدخل الرقم المدني كما هو وارد في ملف سجل الطلبة الأوائل.</p>
+            <p>أدخل الرقم المدني كما هو وارد في سجل الطلبة الأوائل.</p>
           </div>
           <div class="card-body">
             <div class="search-box">
@@ -921,9 +548,7 @@
               </div>
             </div>
 
-            <div id="emptyMessage" class="empty">
-              تأكد من الرقم المدني أو أن الطالب ليس من ضمن الطلبة الأوائل
-            </div>
+            <div id="emptyMessage" class="empty">تأكد من الرقم المدني أو أن الطالب ليس من ضمن الطلبة الأوائل</div>
 
             <div id="result" class="result" aria-live="polite">
               <div class="certificate-top">
@@ -947,15 +572,12 @@
               </div>
 
               <div class="print-note">نسخة مخصصة للطباعة في ورقة واحدة للطالب وولي الأمر</div>
-
               <div class="report-actions">
                 <button class="btn secondary" type="button" onclick="window.print()">طباعة التقرير</button>
               </div>
             </div>
 
-            <div class="note">
-              ملاحظة: يتم البحث في البيانات التي رفعتها الإدارة المدرسية مسبقًا من ملف Excel.
-            </div>
+            <div class="note">ملاحظة: يتم البحث في البيانات التي أضافتها الإدارة المدرسية مسبقًا.</div>
           </div>
         </article>
       </div>
@@ -964,23 +586,20 @@
         <article class="card">
           <div class="card-header">
             <h2>قسم الإدارة المدرسية</h2>
-            <p>يرجى تسجيل الدخول أولًا لرفع ملف Excel وإدارة سجل الطلبة الأوائل.</p>
+            <p>يرجى تسجيل الدخول أولًا لإضافة بيانات الطلبة الأوائل وإدارة السجل.</p>
           </div>
           <div class="card-body">
             <div id="loginArea" class="login-area login-box">
               <h3>تسجيل دخول الإدارة المدرسية</h3>
               <p>هذا القسم مخصص للإدارة المدرسية فقط.</p>
-
               <div class="field-stack">
                 <label for="adminUser">اسم المستخدم</label>
                 <input id="adminUser" class="input" type="text" placeholder="أدخل اسم المستخدم" autocomplete="username" />
               </div>
-
               <div class="field-stack">
                 <label for="adminPass">كلمة المرور</label>
                 <input id="adminPass" class="input" type="password" placeholder="أدخل كلمة المرور" autocomplete="current-password" />
               </div>
-
               <div class="login-actions">
                 <button id="loginBtn" class="btn" type="button">دخول</button>
               </div>
@@ -990,24 +609,20 @@
             <div id="adminContent" class="admin-content">
               <div class="privacy-card">
                 <div class="mark">🔒</div>
-                <div>
-                  <strong>تم الدخول إلى قسم الإدارة المدرسية.</strong>
-                  يمكنك الآن رفع ملف Excel بالترتيب التالي: الرقم المدني، اسم الطالب، الصف، الشعبة، المجموع، الترتيب على الشعبة، الترتيب على الصف.
-                </div>
+                <div><strong>تم الدخول إلى قسم الإدارة المدرسية.</strong> يمكنك الآن نسخ البيانات من ملف Excel ولصقها بالترتيب التالي: الرقم المدني، اسم الطالب، الصف، الشعبة، المجموع، الترتيب على الشعبة، الترتيب على الصف.</div>
               </div>
 
               <div class="admin-grid">
                 <div class="upload-box">
-                  <h3>رفع ملف سجل الطلبة الأوائل</h3>
-                  <p>يجب أن يحتوي ملف Excel على الأعمدة المطلوبة بالترتيب أو بالأسماء نفسها.</p>
+                  <h3>إضافة سجل الطلبة الأوائل</h3>
+                  <p>انسخ البيانات من ملف Excel ثم الصقها في المربع التالي بنفس ترتيب الأعمدة المطلوب.</p>
 
-                  <div id="dropzone" class="dropzone">
-                    <div>
-                      <div class="upload-icon">📊</div>
-                      <h3>اسحب ملف Excel هنا أو اختر الملف</h3>
-                      <p>الترتيب المطلوب: الرقم المدني - اسم الطالب - الصف - الشعبة - المجموع - الترتيب على الشعبة - الترتيب على الصف.</p>
-                      <label class="file-label" for="excelFile">اختيار ملف Excel</label>
-                      <input id="excelFile" type="file" accept=".xlsx,.xls,.csv" />
+                  <div class="paste-box">
+                    <label for="pasteData">لصق البيانات من Excel</label>
+                    <textarea id="pasteData" class="textarea" rows="11" placeholder="الرقم المدني&#9;اسم الطالب&#9;الصف&#9;الشعبة&#9;المجموع&#9;الترتيب على الشعبة&#9;الترتيب على الصف&#10;12345678&#9;أحمد محمد سالم&#9;السابع&#9;1&#9;98&#9;1&#9;1"></textarea>
+                    <div class="paste-actions">
+                      <button id="savePasteBtn" class="btn" type="button">حفظ البيانات الملصقة</button>
+                      <button id="clearPasteBtn" class="btn secondary" type="button">مسح مربع اللصق</button>
                     </div>
                   </div>
 
@@ -1016,24 +631,23 @@
                   <div class="stats">
                     <div class="stat"><b id="totalRecords">0</b><span>عدد السجلات</span></div>
                     <div class="stat"><b id="uniqueClasses">0</b><span>عدد الصفوف</span></div>
-                    <div class="stat"><b id="lastUpload">—</b><span>آخر رفع</span></div>
+                    <div class="stat"><b id="lastUpload">—</b><span>آخر إضافة</span></div>
                   </div>
 
                   <div class="data-management-box">
                     <h3>إدارة البيانات</h3>
-                    <p>يمكن حذف بيانات ملف Excel الحالي عند الحاجة لإضافة بيانات جديدة.</p>
+                    <p>يمكن حذف البيانات الحالية عند الحاجة لإضافة بيانات جديدة من خلال النسخ واللصق.</p>
                     <button id="clearDataBtn" class="btn danger" type="button">حذف البيانات الحالية</button>
                   </div>
 
-                  <div class="login-actions">
+                  <div class="login-actions" style="margin-top:18px;">
                     <button id="logoutBtn" class="btn danger" type="button">تسجيل خروج</button>
                   </div>
                 </div>
 
                 <div class="upload-box">
-                  <h3>معاينة السجلات المرفوعة</h3>
-                  <p>تظهر هنا معاينة مرتبة لأول السجلات داخل ملف Excel بعد الرفع.</p>
-
+                  <h3>معاينة السجلات المحفوظة</h3>
+                  <p>تظهر هنا معاينة مرتبة لأول السجلات بعد حفظ البيانات الملصقة.</p>
                   <div class="table-wrap" id="tableWrap" style="display:none;">
                     <table>
                       <thead>
@@ -1050,8 +664,7 @@
                       <tbody id="previewBody"></tbody>
                     </table>
                   </div>
-
-                  <div id="noPreview" class="note">لم يتم رفع أي ملف بعد.</div>
+                  <div id="noPreview" class="note">لم يتم حفظ أي بيانات بعد.</div>
                 </div>
               </div>
             </div>
@@ -1068,25 +681,16 @@
   </main>
 
   <script>
-    const STORAGE_KEY = "khairat_top_students_records_v2";
+    const STORAGE_KEY = "khairat_top_students_records_paste_v1";
     const ADMIN_USER = "salim50437";
     const ADMIN_PASS = "S@lim50437";
     let students = [];
 
-    const requiredColumns = {
-      civil: ["الرقم المدني", "رقم مدني", "civil", "civil id", "civil_id"],
-      name: ["اسم الطالب", "الاسم", "اسم الطالبة", "student name", "name"],
-      grade: ["الصف", "الصف الدراسي", "grade"],
-      section: ["الشعبة", "الفصل", "section", "class section"],
-      total: ["المجموع", "الدرجة", "total", "score"],
-      sectionRank: ["الترتيب على الشعبة", "ترتيب الشعبة", "section rank"],
-      gradeRank: ["الترتيب على الصف", "ترتيب الصف", "grade rank"]
-    };
-
     const tabs = document.querySelectorAll(".tab-btn");
     const panels = document.querySelectorAll(".panel");
-    const excelFile = document.getElementById("excelFile");
-    const dropzone = document.getElementById("dropzone");
+    const pasteData = document.getElementById("pasteData");
+    const savePasteBtn = document.getElementById("savePasteBtn");
+    const clearPasteBtn = document.getElementById("clearPasteBtn");
     const uploadStatus = document.getElementById("uploadStatus");
     const previewBody = document.getElementById("previewBody");
     const tableWrap = document.getElementById("tableWrap");
@@ -1102,10 +706,10 @@
     const adminPass = document.getElementById("adminPass");
     const loginBtn = document.getElementById("loginBtn");
     const logoutBtn = document.getElementById("logoutBtn");
+    const clearDataBtn = document.getElementById("clearDataBtn");
     const loginStatus = document.getElementById("loginStatus");
     const loginArea = document.getElementById("loginArea");
     const adminContent = document.getElementById("adminContent");
-    const clearDataBtn = document.getElementById("clearDataBtn");
 
     tabs.forEach(button => {
       button.addEventListener("click", () => {
@@ -1124,62 +728,53 @@
       return String(value || "").trim().replace(/\s+/g, "");
     }
 
-    function findColumn(headers, aliases) {
-      const normalizedHeaders = headers.map(h => normalizeKey(h));
-      for (const alias of aliases) {
-        const index = normalizedHeaders.indexOf(normalizeKey(alias));
-        if (index !== -1) return headers[index];
-      }
-      return null;
+    function splitPasteLine(line) {
+      if (line.includes("\t")) return line.split("\t");
+      if (line.includes(",")) return line.split(",");
+      if (line.includes("؛")) return line.split("؛");
+      if (line.includes(";")) return line.split(";");
+      return line.split(/\s{2,}/);
     }
 
-    function mapRows(rows) {
-      if (!rows.length) return [];
-      const headers = Object.keys(rows[0]);
-      const columns = {
-        civil: findColumn(headers, requiredColumns.civil),
-        name: findColumn(headers, requiredColumns.name),
-        grade: findColumn(headers, requiredColumns.grade),
-        section: findColumn(headers, requiredColumns.section),
-        total: findColumn(headers, requiredColumns.total),
-        sectionRank: findColumn(headers, requiredColumns.sectionRank),
-        gradeRank: findColumn(headers, requiredColumns.gradeRank)
-      };
+    function isHeaderRow(cells) {
+      const joined = cells.map(normalizeKey).join(" ");
+      return joined.includes("الرقم المدني") && joined.includes("اسم الطالب");
+    }
 
-      const missing = Object.entries(columns)
-        .filter(([, value]) => !value)
-        .map(([key]) => ({
-          civil: "الرقم المدني",
-          name: "اسم الطالب",
-          grade: "الصف",
-          section: "الشعبة",
-          total: "المجموع",
-          sectionRank: "الترتيب على الشعبة",
-          gradeRank: "الترتيب على الصف"
-        }[key]));
+    function parsePastedData(text) {
+      const lines = String(text || "")
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean);
 
-      if (missing.length) {
-        throw new Error("الأعمدة التالية غير موجودة في الملف: " + missing.join("، "));
+      if (!lines.length) throw new Error("يرجى لصق بيانات الطلبة أولًا.");
+
+      let rows = lines.map(splitPasteLine).map(cells => cells.map(cell => String(cell || "").trim()));
+      if (rows.length && isHeaderRow(rows[0])) rows = rows.slice(1);
+
+      const invalidRows = [];
+      const mapped = rows.map((cells, index) => {
+        if (cells.length < 7) invalidRows.push(index + 1);
+        return {
+          civil: cleanCivil(cells[0]),
+          name: String(cells[1] || "").trim(),
+          grade: String(cells[2] || "").trim(),
+          section: String(cells[3] || "").trim(),
+          total: String(cells[4] || "").trim(),
+          sectionRank: String(cells[5] || "").trim(),
+          gradeRank: String(cells[6] || "").trim()
+        };
+      }).filter(item => item.civil && item.name);
+
+      if (invalidRows.length) {
+        throw new Error("بعض الصفوف لا تحتوي على جميع الأعمدة السبعة المطلوبة. راجع الصفوف: " + invalidRows.join("، "));
       }
-
-      return rows
-        .map(row => ({
-          civil: cleanCivil(row[columns.civil]),
-          name: String(row[columns.name] || "").trim(),
-          grade: String(row[columns.grade] || "").trim(),
-          section: String(row[columns.section] || "").trim(),
-          total: String(row[columns.total] || "").trim(),
-          sectionRank: String(row[columns.sectionRank] || "").trim(),
-          gradeRank: String(row[columns.gradeRank] || "").trim()
-        }))
-        .filter(item => item.civil && item.name);
+      if (!mapped.length) throw new Error("لم يتم العثور على سجلات صالحة. تأكد من ترتيب البيانات قبل اللصق.");
+      return mapped;
     }
 
     function saveData() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        records: students,
-        uploadedAt: new Date().toLocaleString("ar-OM")
-      }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ records: students, uploadedAt: new Date().toLocaleString("ar-OM") }));
     }
 
     function loadData() {
@@ -1225,7 +820,7 @@
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
+        .replace(/\"/g, "&quot;")
         .replace(/'/g, "&#039;");
     }
 
@@ -1234,54 +829,22 @@
       element.className = `status show ${type}`;
     }
 
-    function handleFile(file) {
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = event => {
-        try {
-          const data = new Uint8Array(event.target.result);
-          const workbook = XLSX.read(data, { type: "array" });
-          const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-          const rows = XLSX.utils.sheet_to_json(firstSheet, { defval: "" });
-          const mapped = mapRows(rows);
-
-          if (!mapped.length) {
-            throw new Error("لم يتم العثور على سجلات صالحة داخل الملف.");
-          }
-
-          students = mapped;
-          saveData();
-          renderPreview();
-          updateStats();
-          setStatus(uploadStatus, `تم رفع الملف بنجاح، وعدد السجلات المحفوظة: ${students.length}`, "success");
-        } catch (error) {
-          setStatus(uploadStatus, error.message || "حدث خطأ أثناء قراءة ملف Excel.", "error");
-        }
-      };
-      reader.onerror = () => setStatus(uploadStatus, "تعذر قراءة الملف. يرجى المحاولة مرة أخرى.", "error");
-      reader.readAsArrayBuffer(file);
+    function savePastedData() {
+      try {
+        students = parsePastedData(pasteData.value);
+        saveData();
+        renderPreview();
+        updateStats();
+        setStatus(uploadStatus, `تم حفظ البيانات بنجاح، وعدد السجلات المحفوظة: ${students.length}`, "success");
+      } catch (error) {
+        setStatus(uploadStatus, error.message || "حدث خطأ أثناء قراءة البيانات الملصقة.", "error");
+      }
     }
 
-    excelFile.addEventListener("change", event => handleFile(event.target.files[0]));
-
-    ["dragenter", "dragover"].forEach(eventName => {
-      dropzone.addEventListener(eventName, event => {
-        event.preventDefault();
-        dropzone.classList.add("dragover");
-      });
-    });
-
-    ["dragleave", "drop"].forEach(eventName => {
-      dropzone.addEventListener(eventName, event => {
-        event.preventDefault();
-        dropzone.classList.remove("dragover");
-      });
-    });
-
-    dropzone.addEventListener("drop", event => {
-      const file = event.dataTransfer.files[0];
-      handleFile(file);
-    });
+    function clearPasteBox() {
+      pasteData.value = "";
+      pasteData.focus();
+    }
 
     function showResult(student) {
       document.getElementById("studentNameTitle").textContent = student.name;
@@ -1307,19 +870,13 @@
         hideResultWithMessage("يرجى إدخال الرقم المدني أولًا.");
         return;
       }
-
       const student = students.find(item => cleanCivil(item.civil) === civil);
-      if (student) {
-        showResult(student);
-      } else {
-        hideResultWithMessage("تأكد من الرقم المدني أو أن الطالب ليس من ضمن الطلبة الأوائل");
-      }
+      if (student) showResult(student);
+      else hideResultWithMessage("تأكد من الرقم المدني أو أن الطالب ليس من ضمن الطلبة الأوائل");
     }
 
     function loginAdmin() {
-      const user = adminUser.value.trim();
-      const pass = adminPass.value;
-      if (user === ADMIN_USER && pass === ADMIN_PASS) {
+      if (adminUser.value.trim() === ADMIN_USER && adminPass.value === ADMIN_PASS) {
         loginArea.classList.add("hide");
         adminContent.classList.add("show");
         setStatus(loginStatus, "تم تسجيل الدخول بنجاح.", "success");
@@ -1339,7 +896,6 @@
     function clearAllData() {
       const confirmed = confirm("هل أنت متأكد من حذف جميع بيانات الطلبة الأوائل الحالية؟ لا يمكن التراجع عن هذه العملية.");
       if (!confirmed) return;
-
       students = [];
       localStorage.removeItem(STORAGE_KEY);
       renderPreview();
@@ -1347,21 +903,18 @@
       result.classList.remove("show");
       emptyMessage.classList.remove("show");
       searchInput.value = "";
-      if (excelFile) excelFile.value = "";
-      setStatus(uploadStatus, "تم حذف جميع البيانات الحالية بنجاح، ويمكنك الآن رفع ملف جديد.", "success");
+      pasteData.value = "";
+      setStatus(uploadStatus, "تم حذف جميع البيانات الحالية بنجاح، ويمكنك الآن لصق بيانات جديدة.", "success");
     }
 
+    savePasteBtn.addEventListener("click", savePastedData);
+    clearPasteBtn.addEventListener("click", clearPasteBox);
     loginBtn.addEventListener("click", loginAdmin);
     logoutBtn.addEventListener("click", logoutAdmin);
     clearDataBtn.addEventListener("click", clearAllData);
-    adminPass.addEventListener("keydown", event => {
-      if (event.key === "Enter") loginAdmin();
-    });
-
     searchBtn.addEventListener("click", searchStudent);
-    searchInput.addEventListener("keydown", event => {
-      if (event.key === "Enter") searchStudent();
-    });
+    searchInput.addEventListener("keydown", event => { if (event.key === "Enter") searchStudent(); });
+    adminPass.addEventListener("keydown", event => { if (event.key === "Enter") loginAdmin(); });
 
     loadData();
   </script>
