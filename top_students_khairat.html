@@ -21,9 +21,7 @@
       --shadow: 0 24px 70px rgba(20, 83, 45, 0.16);
       --radius: 28px;
     }
-
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       min-height: 100vh;
@@ -35,9 +33,7 @@
         linear-gradient(135deg, #fffaf0 0%, #f5efe0 44%, #edf7ef 100%);
       overflow-x: hidden;
     }
-
-    body::before,
-    body::after {
+    body::before, body::after {
       content: "";
       position: fixed;
       z-index: -1;
@@ -45,7 +41,6 @@
       filter: blur(2px);
       opacity: 0.55;
     }
-
     body::before {
       width: 340px;
       height: 340px;
@@ -53,7 +48,6 @@
       top: 160px;
       background: linear-gradient(145deg, rgba(20, 83, 45, 0.22), rgba(217, 164, 65, 0.10));
     }
-
     body::after {
       width: 280px;
       height: 280px;
@@ -61,13 +55,7 @@
       bottom: 130px;
       background: linear-gradient(145deg, rgba(217, 164, 65, 0.24), rgba(20, 83, 45, 0.10));
     }
-
-    .page {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 28px 0 22px;
-    }
-
+    .page { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 22px; }
     .hero {
       position: relative;
       border-radius: 34px;
@@ -79,7 +67,6 @@
         url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f4d58d' stroke-opacity='.24' stroke-width='1.4'%3E%3Cpath d='M60 8l12 24 26 4-19 18 5 26-24-13-24 13 5-26-19-18 26-4z'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3C/g%3E%3C/svg%3E");
       box-shadow: var(--shadow);
     }
-
     .badge {
       display: inline-flex;
       align-items: center;
@@ -92,397 +79,140 @@
       font-weight: 700;
       color: var(--gold-2);
     }
-
-    .badge span {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 6px rgba(217, 164, 65, 0.16);
-    }
-
-    h1 {
-      max-width: 980px;
-      margin: 18px 0 12px;
-      font-size: clamp(27px, 4.6vw, 50px);
-      line-height: 1.42;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      max-width: 880px;
-      margin: 0;
-      color: rgba(255, 255, 255, 0.86);
-      font-size: clamp(15px, 2vw, 18px);
-      line-height: 2;
-      font-weight: 500;
-    }
-
-    .tabs {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin: 24px 0 18px;
-    }
-
+    .badge span { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 6px rgba(217, 164, 65, 0.16); }
+    h1 { max-width: 980px; margin: 18px 0 12px; font-size: clamp(27px, 4.6vw, 50px); line-height: 1.42; font-weight: 900; letter-spacing: -1px; }
+    .hero p { max-width: 880px; margin: 0; color: rgba(255, 255, 255, 0.86); font-size: clamp(15px, 2vw, 18px); line-height: 2; font-weight: 500; }
+    .tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 24px 0 18px; }
     .tab-btn {
-      border: 0;
-      cursor: pointer;
-      padding: 18px 20px;
-      border-radius: 22px;
-      font-family: inherit;
-      font-size: 17px;
-      font-weight: 900;
-      color: var(--primary);
-      background: rgba(255, 255, 255, 0.78);
-      box-shadow: 0 14px 34px rgba(20, 83, 45, 0.10);
-      transition: transform .2s ease, background .2s ease, color .2s ease;
+      border: 0; cursor: pointer; padding: 18px 20px; border-radius: 22px; font-family: inherit;
+      font-size: 17px; font-weight: 900; color: var(--primary); background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 14px 34px rgba(20, 83, 45, 0.10); transition: transform .2s ease, background .2s ease, color .2s ease;
     }
-
     .tab-btn:hover { transform: translateY(-2px); }
     .tab-btn.active { color: #fff; background: linear-gradient(135deg, var(--primary), var(--primary-2)); }
-
     .panels-shell { display: grid; min-height: 650px; }
     .panel { display: none; }
     .panel.active { display: block; animation: fadeUp .35s ease both; }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
     .card {
-      min-height: 650px;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(20, 83, 45, 0.12);
-      border-radius: var(--radius);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      overflow: hidden;
+      min-height: 650px; display: flex; flex-direction: column; border: 1px solid rgba(20, 83, 45, 0.12);
+      border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); backdrop-filter: blur(18px); overflow: hidden;
     }
-
-    .card-header {
-      padding: 22px 24px;
-      border-bottom: 1px solid rgba(20, 83, 45, 0.10);
-      background: linear-gradient(135deg, rgba(255,255,255,.76), rgba(244,213,141,.22));
-    }
-
+    .card-header { padding: 22px 24px; border-bottom: 1px solid rgba(20, 83, 45, 0.10); background: linear-gradient(135deg, rgba(255,255,255,.76), rgba(244,213,141,.22)); }
     .card-header h2 { margin: 0; color: var(--primary); font-size: 24px; font-weight: 900; }
     .card-header p { margin: 7px 0 0; color: var(--muted); line-height: 1.8; font-size: 14px; }
-
     .card-body { flex: 1; padding: 24px; display: flex; flex-direction: column; }
-
-    .admin-grid {
-      display: grid;
-      grid-template-columns: minmax(300px, .82fr) 1.18fr;
-      gap: 18px;
-      align-items: stretch;
-      flex: 1;
+    .admin-grid { display: grid; grid-template-columns: minmax(300px, .82fr) 1.18fr; gap: 18px; align-items: stretch; flex: 1; }
+    .login-box, .upload-box, .report-box, .data-management-box {
+      border-radius: 24px; border: 1px solid rgba(20, 83, 45, 0.10); background: rgba(255, 255, 255, 0.72);
+      padding: 20px; box-shadow: 0 14px 34px rgba(20, 83, 45, 0.08);
     }
-
-    .login-box,
-    .upload-box,
-    .report-box,
-    .data-management-box {
-      border-radius: 24px;
-      border: 1px solid rgba(20, 83, 45, 0.10);
-      background: rgba(255, 255, 255, 0.72);
-      padding: 20px;
-      box-shadow: 0 14px 34px rgba(20, 83, 45, 0.08);
-    }
-
-    .login-box h3,
-    .upload-box h3,
-    .report-box h3,
-    .data-management-box h3 {
-      margin: 0 0 12px;
-      color: var(--primary);
-      font-size: 20px;
-      font-weight: 900;
-    }
-
-    .login-box p,
-    .upload-box p,
-    .report-box p,
-    .data-management-box p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-      font-weight: 600;
-    }
-
+    .login-box h3, .upload-box h3, .report-box h3, .data-management-box h3 { margin: 0 0 12px; color: var(--primary); font-size: 20px; font-weight: 900; }
+    .login-box p, .upload-box p, .report-box p, .data-management-box p { margin: 0 0 14px; color: var(--muted); font-size: 14px; line-height: 1.8; font-weight: 600; }
     label { color: var(--primary); font-size: 15px; font-weight: 900; }
     .field-stack { display: grid; gap: 10px; margin-bottom: 14px; }
-
     .input-row { display: flex; gap: 12px; }
-
-    .input,
-    .textarea {
-      width: 100%;
-      padding: 13px 18px;
-      border: 1px solid rgba(20, 83, 45, 0.18);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.94);
-      outline: none;
-      font-family: inherit;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--ink);
-      transition: border-color .2s ease, box-shadow .2s ease;
+    .input, .textarea {
+      width: 100%; padding: 13px 18px; border: 1px solid rgba(20, 83, 45, 0.18); border-radius: 18px;
+      background: rgba(255, 255, 255, 0.94); outline: none; font-family: inherit; font-size: 17px; font-weight: 700;
+      color: var(--ink); transition: border-color .2s ease, box-shadow .2s ease;
     }
-
     .input { min-height: 56px; }
     .textarea { min-height: 260px; resize: vertical; line-height: 1.9; font-size: 15px; direction: rtl; }
-
-    .input:focus,
-    .textarea:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 5px rgba(217, 164, 65, 0.15);
-    }
-
+    .input:focus, .textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 5px rgba(217, 164, 65, 0.15); }
     .paste-box {
-      display: grid;
-      gap: 12px;
-      padding: 18px;
-      border: 1px dashed rgba(20, 83, 45, 0.24);
-      border-radius: 24px;
+      display: grid; gap: 12px; padding: 18px; border: 1px dashed rgba(20, 83, 45, 0.24); border-radius: 24px;
       background: linear-gradient(135deg, rgba(20,83,45,.045), rgba(217,164,65,.075));
     }
-
-    .paste-actions,
-    .login-actions,
-    .report-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
+    .paste-actions, .login-actions, .report-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     .report-actions { justify-content: center; padding: 0 22px 24px; }
-
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 50px;
-      padding: 12px 22px;
-      border: none;
-      border-radius: 18px;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: 900;
-      color: #fff;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      box-shadow: 0 14px 26px rgba(20, 83, 45, 0.18);
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 12px 22px;
+      border: none; border-radius: 18px; cursor: pointer; font-family: inherit; font-size: 16px; font-weight: 900;
+      color: #fff; background: linear-gradient(135deg, var(--primary), var(--primary-2)); box-shadow: 0 14px 26px rgba(20, 83, 45, 0.18);
       transition: transform .2s ease, box-shadow .2s ease;
     }
-
     .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(20, 83, 45, 0.22); }
     .btn.secondary { color: var(--primary); background: #fff; border: 1px solid rgba(20, 83, 45, 0.16); box-shadow: 0 10px 24px rgba(20, 83, 45, 0.08); }
     .btn.danger { background: linear-gradient(135deg, #7f1d1d, #b42318); }
-
-    .note,
-    .print-note {
-      margin-top: 16px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(20, 83, 45, 0.07);
-      color: var(--primary);
-      line-height: 1.8;
-      font-size: 14px;
-      font-weight: 800;
+    .note, .print-note {
+      margin-top: 16px; padding: 14px 16px; border-radius: 18px; background: rgba(20, 83, 45, 0.07); color: var(--primary);
+      line-height: 1.8; font-size: 14px; font-weight: 800;
     }
-
     .print-note { margin: 0 22px 16px; text-align: center; }
-
     .status {
-      display: none;
-      margin-top: 16px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      line-height: 1.8;
-      font-weight: 800;
-      font-size: 14px;
+      display: none; margin-top: 16px; padding: 14px 16px; border-radius: 18px; line-height: 1.8; font-weight: 800; font-size: 14px;
     }
-
     .status.show { display: block; }
     .status.success { color: var(--success); background: rgba(2, 122, 72, 0.10); }
     .status.error { color: var(--danger); background: rgba(180, 35, 24, 0.10); }
-
     .search-box { display: grid; gap: 14px; max-width: 760px; margin: 0 auto; width: 100%; }
-
     .result {
-      display: none;
-      max-width: 940px;
-      width: 100%;
-      margin: 24px auto 0;
-      border-radius: 30px;
-      overflow: hidden;
-      border: 1px solid rgba(217, 164, 65, 0.28);
-      background: linear-gradient(135deg, rgba(255,255,255,.97), rgba(255,250,240,.94));
+      display: none; max-width: 940px; width: 100%; margin: 24px auto 0; border-radius: 30px; overflow: hidden;
+      border: 1px solid rgba(217, 164, 65, 0.28); background: linear-gradient(135deg, rgba(255,255,255,.97), rgba(255,250,240,.94));
       box-shadow: 0 22px 58px rgba(20, 83, 45, 0.12);
     }
-
     .result.show { display: block; animation: fadeUp .35s ease both; }
-
     .certificate-top {
-      position: relative;
-      padding: 24px;
-      color: #fff;
-      background:
-        linear-gradient(135deg, rgba(20,83,45,.98), rgba(217,164,65,.92)),
-        url("data:image/svg+xml,%3Csvg width='90' height='90' viewBox='0 0 90 90' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.18'%3E%3Cpath d='M45 5l10 22 24 3-17 17 4 24-21-12-21 12 4-24-17-17 24-3z'/%3E%3Ccircle cx='45' cy='45' r='34'/%3E%3C/g%3E%3C/svg%3E");
+      position: relative; padding: 24px; color: #fff;
+      background: linear-gradient(135deg, rgba(20,83,45,.98), rgba(217,164,65,.92)), url("data:image/svg+xml,%3Csvg width='90' height='90' viewBox='0 0 90 90' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.18'%3E%3Cpath d='M45 5l10 22 24 3-17 17 4 24-21-12-21 12 4-24-17-17 24-3z'/%3E%3Ccircle cx='45' cy='45' r='34'/%3E%3C/g%3E%3C/svg%3E");
     }
-
     .certificate-top::after {
-      content: "🏅";
-      position: absolute;
-      left: 24px;
-      top: 22px;
-      width: 70px;
-      height: 70px;
-      display: grid;
-      place-items: center;
-      border-radius: 24px;
-      font-size: 38px;
-      background: rgba(255,255,255,.16);
-      border: 1px solid rgba(255,255,255,.22);
+      content: "🏅"; position: absolute; left: 24px; top: 22px; width: 70px; height: 70px; display: grid; place-items: center;
+      border-radius: 24px; font-size: 38px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.22);
     }
-
     .certificate-top h3 { margin: 0; padding-left: 88px; font-size: clamp(24px, 3vw, 34px); font-weight: 900; line-height: 1.5; }
     .certificate-top p { margin: 7px 0 0; padding-left: 88px; color: rgba(255, 255, 255, .88); font-weight: 700; line-height: 1.8; }
-
     .student-highlight {
-      margin: 22px;
-      padding: 20px;
-      border-radius: 24px;
-      text-align: center;
-      background: linear-gradient(135deg, rgba(244,213,141,.30), rgba(20,83,45,.07));
-      border: 1px solid rgba(217, 164, 65, 0.26);
+      margin: 22px; padding: 20px; border-radius: 24px; text-align: center;
+      background: linear-gradient(135deg, rgba(244,213,141,.30), rgba(20,83,45,.07)); border: 1px solid rgba(217, 164, 65, 0.26);
     }
-
     .student-highlight span { display: block; color: var(--muted); font-size: 14px; font-weight: 900; }
     .student-highlight strong { display: block; color: var(--primary); font-size: clamp(25px, 4vw, 42px); font-weight: 900; line-height: 1.6; }
-
     .excellence-quote {
-      max-width: 760px;
-      margin: 10px auto 0;
-      padding: 12px 18px;
-      border-radius: 18px;
-      color: #8a5b0e;
-      background: rgba(255, 255, 255, 0.62);
-      border: 1px solid rgba(217, 164, 65, 0.22);
-      font-size: clamp(15px, 2vw, 18px);
-      font-weight: 900;
-      line-height: 2;
+      max-width: 760px; margin: 10px auto 0; padding: 12px 18px; border-radius: 18px; color: #8a5b0e;
+      background: rgba(255, 255, 255, 0.62); border: 1px solid rgba(217, 164, 65, 0.22); font-size: clamp(15px, 2vw, 18px);
+      font-weight: 900; line-height: 2;
     }
-
-    .result-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      padding: 0 22px 22px;
-    }
-
+    .result-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 0 22px 22px; }
     .field { padding: 16px; border-radius: 19px; background: rgba(20, 83, 45, 0.055); border: 1px solid rgba(20, 83, 45, 0.08); }
     .field.featured { background: rgba(217, 164, 65, 0.13); border-color: rgba(217, 164, 65, 0.22); }
     .field span { display: block; margin-bottom: 6px; color: var(--muted); font-size: 13px; font-weight: 800; }
     .field strong { display: block; color: var(--primary); font-size: 18px; line-height: 1.6; word-break: break-word; }
-
     .empty {
-      display: none;
-      max-width: 760px;
-      margin: 18px auto 0;
-      padding: 18px;
-      border-radius: 20px;
-      color: var(--danger);
-      background: rgba(180, 35, 24, 0.10);
-      border: 1px solid rgba(180, 35, 24, 0.14);
-      font-weight: 900;
-      line-height: 1.8;
-      text-align: center;
+      display: none; max-width: 760px; margin: 18px auto 0; padding: 18px; border-radius: 20px; color: var(--danger);
+      background: rgba(180, 35, 24, 0.10); border: 1px solid rgba(180, 35, 24, 0.14); font-weight: 900; line-height: 1.8; text-align: center;
     }
-
     .empty.show { display: block; }
-
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
     .stat { padding: 16px; border-radius: 20px; background: rgba(255,255,255,.78); border: 1px solid rgba(20,83,45,.10); text-align: center; }
     .stat b { display: block; color: var(--primary); font-size: 25px; font-weight: 900; }
     .stat span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; font-weight: 800; }
-
-    .table-wrap {
-      margin-top: 18px;
-      max-height: 360px;
-      overflow: auto;
-      border-radius: 20px;
-      border: 1px solid rgba(20, 83, 45, 0.10);
-      background: #fff;
-    }
-
+    .table-wrap { margin-top: 18px; max-height: 360px; overflow: auto; border-radius: 20px; border: 1px solid rgba(20, 83, 45, 0.10); background: #fff; }
     table { width: 100%; border-collapse: collapse; min-width: 780px; font-size: 14px; }
     th, td { padding: 13px 14px; border-bottom: 1px solid rgba(20, 83, 45, 0.08); text-align: right; white-space: nowrap; }
     th { position: sticky; top: 0; z-index: 1; color: #fff; background: var(--primary); font-weight: 900; }
     td { color: #26342b; font-weight: 700; }
-
     .privacy-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 18px;
-      padding: 18px;
-      border-radius: 22px;
-      color: var(--primary);
-      background: rgba(217, 164, 65, 0.13);
-      border: 1px solid rgba(217, 164, 65, 0.18);
-      line-height: 1.8;
-      font-weight: 700;
+      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; padding: 18px; border-radius: 22px; color: var(--primary);
+      background: rgba(217, 164, 65, 0.13); border: 1px solid rgba(217, 164, 65, 0.18); line-height: 1.8; font-weight: 700;
     }
-
     .privacy-card .mark {
-      flex: 0 0 auto;
-      width: 42px;
-      height: 42px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: linear-gradient(135deg, var(--gold), var(--primary));
-      font-size: 22px;
+      flex: 0 0 auto; width: 42px; height: 42px; border-radius: 15px; display: grid; place-items: center; color: #fff;
+      background: linear-gradient(135deg, var(--gold), var(--primary)); font-size: 22px;
     }
-
     .data-management-box { margin-top: 18px; background: rgba(180, 35, 24, 0.07); border-color: rgba(180, 35, 24, 0.16); }
     .data-management-box h3 { color: var(--danger); }
-
     .admin-content { display: none; }
     .admin-content.show { display: block; }
     .login-area.hide { display: none; }
-
     footer {
-      margin-top: 22px;
-      padding: 20px 24px;
-      border-radius: 24px;
-      text-align: center;
-      color: var(--primary);
-      background: rgba(255, 255, 255, 0.68);
-      border: 1px solid rgba(20, 83, 45, 0.10);
-      box-shadow: 0 14px 34px rgba(20, 83, 45, 0.08);
-      line-height: 2;
-      font-weight: 800;
+      margin-top: 22px; padding: 20px 24px; border-radius: 24px; text-align: center; color: var(--primary);
+      background: rgba(255, 255, 255, 0.68); border: 1px solid rgba(20, 83, 45, 0.10);
+      box-shadow: 0 14px 34px rgba(20, 83, 45, 0.08); line-height: 2; font-weight: 800;
     }
-
     footer .designer { color: #8a5b0e; font-weight: 900; }
-
-    @media (max-width: 960px) {
-      .admin-grid { grid-template-columns: 1fr; }
-      .card, .panels-shell { min-height: auto; }
-    }
-
+    @media (max-width: 960px) { .admin-grid { grid-template-columns: 1fr; } .card, .panels-shell { min-height: auto; } }
     @media (max-width: 700px) {
       .page { width: min(100% - 22px, 1180px); padding-top: 14px; }
       .hero { padding: 28px 22px; }
@@ -493,7 +223,6 @@
       .certificate-top h3, .certificate-top p { padding-left: 0; }
       .certificate-top::after { position: static; margin-bottom: 14px; }
     }
-
     @media print {
       @page { size: A4 portrait; margin: 10mm; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
@@ -524,7 +253,7 @@
     <section class="hero">
       <div class="badge"><span></span> نظام إلكتروني لعرض سجل الطلبة الأوائل</div>
       <h1>الطلبة الأوائل للفصل الدراسي الثاني بمدرسة الخيرات للتعليم الأساسي 5-8 للعام الدراسي 2025 - 2026 -الدور الأول - الفصل الدراسي الثاني</h1>
-      <p>منصة مدرسية أنيقة تتيح للإدارة إضافة بيانات الطلبة الأوائل بالنسخ واللصق من Excel، وتمكّن الطالب أو ولي الأمر من البحث بالرقم المدني لاستعراض بيانات الطالب وترتيبه بدقة وسهولة.</p>
+      <p>منصة مدرسية أنيقة تحتوي على بيانات الطلبة داخل ملف HTML نفسه، وتمكّن الطالب أو ولي الأمر من البحث بالرقم المدني لاستعراض بيانات الطالب وترتيبه بدقة وسهولة.</p>
     </section>
 
     <div class="tabs" role="tablist" aria-label="اختيار النافذة">
@@ -577,7 +306,7 @@
               </div>
             </div>
 
-            <div class="note">ملاحظة: يتم البحث في البيانات التي أضافتها الإدارة المدرسية مسبقًا.</div>
+            <div class="note">ملاحظة: يحتوي هذا الملف على بيانات الطلاب مضمّنة داخل HTML.</div>
           </div>
         </article>
       </div>
@@ -586,7 +315,7 @@
         <article class="card">
           <div class="card-header">
             <h2>قسم الإدارة المدرسية</h2>
-            <p>يرجى تسجيل الدخول أولًا لإضافة بيانات الطلبة الأوائل وإدارة السجل.</p>
+            <p>يرجى تسجيل الدخول أولًا لإضافة بيانات جديدة أو إدارة السجل.</p>
           </div>
           <div class="card-body">
             <div id="loginArea" class="login-area login-box">
@@ -609,12 +338,12 @@
             <div id="adminContent" class="admin-content">
               <div class="privacy-card">
                 <div class="mark">🔒</div>
-                <div><strong>تم الدخول إلى قسم الإدارة المدرسية.</strong> يمكنك الآن نسخ البيانات من ملف Excel ولصقها بالترتيب التالي: الرقم المدني، اسم الطالب، الصف، الشعبة، المجموع، الترتيب على الشعبة، الترتيب على الصف.</div>
+                <div><strong>تم الدخول إلى قسم الإدارة المدرسية.</strong> البيانات الحالية مضمّنة داخل ملف HTML، ويمكنك استبدالها بلصق بيانات جديدة بالترتيب التالي: الرقم المدني، اسم الطالب، الصف، الشعبة، المجموع، الترتيب على الشعبة، الترتيب على الصف.</div>
               </div>
 
               <div class="admin-grid">
                 <div class="upload-box">
-                  <h3>إضافة سجل الطلبة الأوائل</h3>
+                  <h3>إضافة أو استبدال سجل الطلبة الأوائل</h3>
                   <p>انسخ البيانات من ملف Excel ثم الصقها في المربع التالي بنفس ترتيب الأعمدة المطلوب.</p>
 
                   <div class="paste-box">
@@ -647,7 +376,7 @@
 
                 <div class="upload-box">
                   <h3>معاينة السجلات المحفوظة</h3>
-                  <p>تظهر هنا معاينة مرتبة لأول السجلات بعد حفظ البيانات الملصقة.</p>
+                  <p>تظهر هنا معاينة مرتبة لأول السجلات المحفوظة داخل الموقع.</p>
                   <div class="table-wrap" id="tableWrap" style="display:none;">
                     <table>
                       <thead>
@@ -664,7 +393,7 @@
                       <tbody id="previewBody"></tbody>
                     </table>
                   </div>
-                  <div id="noPreview" class="note">لم يتم حفظ أي بيانات بعد.</div>
+                  <div id="noPreview" class="note">لا توجد بيانات محفوظة حاليًا.</div>
                 </div>
               </div>
             </div>
@@ -681,9 +410,10 @@
   </main>
 
   <script>
-    const STORAGE_KEY = "khairat_top_students_records_paste_v1";
+    const STORAGE_KEY = "khairat_top_students_records_embedded_v1";
     const ADMIN_USER = "salim50437";
     const ADMIN_PASS = "S@lim50437";
+    const INITIAL_STUDENTS = [{"civil":"1","name":"هشام بن محمد بن هلال الصقير العامري","grade":"خامس","section":"1","total":"595","sectionRank":"1","gradeRank":"4"},{"civil":"2","name":"الوليد بن خالد بن علي حمد الجابري","grade":"خامس","section":"1","total":"583","sectionRank":"2","gradeRank":"12"},{"civil":"3","name":"سعيد بن خالد بن سعيد علي البوسعيدي","grade":"خامس","section":"1","total":"578","sectionRank":"3","gradeRank":"16"},{"civil":"4","name":"إبراهيم بن خليل بن احمد صالح الحبسي","grade":"خامس","section":"1","total":"577","sectionRank":"4","gradeRank":"17"},{"civil":"5","name":"عمر بن راشد بن عبدالله حارب الحبسي","grade":"خامس","section":"1","total":"575","sectionRank":"5","gradeRank":"19"},{"civil":"6","name":"سعيد بن سعود بن سعيد محمد الحبسي","grade":"خامس","section":"1","total":"572","sectionRank":"6","gradeRank":"22"},{"civil":"7","name":"علي بن جاسم بن علي عامر الجابري","grade":"خامس","section":"1","total":"563","sectionRank":"7","gradeRank":"28"},{"civil":"8","name":"ناصر بن محمد بن ناصر حمود الحبسي","grade":"خامس","section":"1","total":"561","sectionRank":"8","gradeRank":"30"},{"civil":"9","name":"بدر بن شبيب بن عبدالله سعيد الشبيبي","grade":"خامس","section":"1","total":"544","sectionRank":"9","gradeRank":"36"},{"civil":"10","name":"علي بن سالم بن علي عبدالله الحبسي","grade":"خامس","section":"1","total":"541","sectionRank":"10","gradeRank":"39"},{"civil":"11","name":"عبدالله بن سيف بن سعيد سبح الحبسي","grade":"خامس","section":"2","total":"596","sectionRank":"1","gradeRank":"3"},{"civil":"12","name":"محمد بن ابراهيم بن سعيد زهران النعماني","grade":"خامس","section":"2","total":"590","sectionRank":"2","gradeRank":"6"},{"civil":"13","name":"يحيى بن خالد بن أحمد صالح الطوقي","grade":"خامس","section":"2","total":"588","sectionRank":"3","gradeRank":"8"},{"civil":"14","name":"محمد بن محمود بن محمد الصغير القنوبي","grade":"خامس","section":"2","total":"588","sectionRank":"3","gradeRank":"8"},{"civil":"15","name":"صالح بن عيسى بن صالح عامر النعماني","grade":"خامس","section":"2","total":"583","sectionRank":"4","gradeRank":"12"},{"civil":"16","name":"أيوب بن أسعد بن سالم سعيد المبسلي","grade":"خامس","section":"2","total":"580","sectionRank":"5","gradeRank":"14"},{"civil":"17","name":"سعيد بن جمعه بن سعيد سبح الحبسي","grade":"خامس","section":"2","total":"573","sectionRank":"6","gradeRank":"21"},{"civil":"18","name":"الوليد بن حمود بن سعيد زهران النعماني","grade":"خامس","section":"2","total":"573","sectionRank":"6","gradeRank":"21"},{"civil":"19","name":"منصور بن محمد بن حمود ناصر الحبسي","grade":"خامس","section":"2","total":"572","sectionRank":"7","gradeRank":"22"},{"civil":"20","name":"عبدالعزيز بن سعود بن مبروك سبح الحبسي","grade":"خامس","section":"2","total":"571","sectionRank":"8","gradeRank":"23"},{"civil":"21","name":"نهيان بن علي بن سلطان خربوش الحبسي","grade":"خامس","section":"2","total":"570","sectionRank":"9","gradeRank":"24"},{"civil":"22","name":"أحمد بن سعيد بن سالم خالد البرواني","grade":"خامس","section":"2","total":"567","sectionRank":"10","gradeRank":"26"},{"civil":"23","name":"المختار بن أحمد بن ناصر محمد الحبسي","grade":"خامس","section":"3","total":"593","sectionRank":"1","gradeRank":"5"},{"civil":"24","name":"حمزة محمد  الفروح","grade":"خامس","section":"3","total":"589","sectionRank":"2","gradeRank":"7"},{"civil":"25","name":"أحمد بن سالم بن محمد الصغير القنوبي","grade":"خامس","section":"3","total":"584","sectionRank":"3","gradeRank":"11"},{"civil":"26","name":"لقمان بن خالد بن عامر محمد الحبسي","grade":"خامس","section":"3","total":"582","sectionRank":"4","gradeRank":"13"},{"civil":"27","name":"محمد بن بدر بن عيد سالم القنوبي","grade":"خامس","section":"3","total":"577","sectionRank":"5","gradeRank":"17"},{"civil":"28","name":"محمد بن عامر بن سليم سليّم المبسلي","grade":"خامس","section":"3","total":"576","sectionRank":"6","gradeRank":"18"},{"civil":"29","name":"صالح بن خالد بن منصور سليمان الحبسي","grade":"خامس","section":"3","total":"573","sectionRank":"7","gradeRank":"21"},{"civil":"30","name":"محمد بن جاسم بن حمود حمد الجابري","grade":"خامس","section":"3","total":"569","sectionRank":"8","gradeRank":"25"},{"civil":"31","name":"البراء بن سعود بن محمد هلال الجابري","grade":"خامس","section":"3","total":"562","sectionRank":"9","gradeRank":"29"},{"civil":"32","name":"سلطان بن حمدان بن مبارك عامر الحبسي","grade":"خامس","section":"3","total":"558","sectionRank":"10","gradeRank":"31"},{"civil":"33","name":"صالح بن ناصر بن حمد محمد الحبسي","grade":"خامس","section":"4","total":"590","sectionRank":"1","gradeRank":"6"},{"civil":"34","name":"نبهان بن عبدالله بن عامر خالد الحبسي","grade":"خامس","section":"4","total":"590","sectionRank":"1","gradeRank":"6"},{"civil":"35","name":"المنذر بن ذياب بن محمد حميد المبيحسي","grade":"خامس","section":"4","total":"587","sectionRank":"2","gradeRank":"9"},{"civil":"36","name":"عبدالله بن علي بن عبدالله حميد الحبسي","grade":"خامس","section":"4","total":"580","sectionRank":"3","gradeRank":"14"},{"civil":"37","name":"جسّار بن بدر بن سالم سليمان الحبسي","grade":"خامس","section":"4","total":"580","sectionRank":"3","gradeRank":"14"},{"civil":"38","name":"عبدالله بن خالد بن محمد علي الحبسي","grade":"خامس","section":"4","total":"579","sectionRank":"4","gradeRank":"15"},{"civil":"39","name":"مايد بن شهاب بن حمد محمد الجابري","grade":"خامس","section":"4","total":"577","sectionRank":"5","gradeRank":"17"},{"civil":"40","name":"خالد بن بدر بن سالم حمد الجابري","grade":"خامس","section":"4","total":"570","sectionRank":"6","gradeRank":"24"},{"civil":"41","name":"اليزيد بن صلاح بن أحمد محمد الشبيبي","grade":"خامس","section":"4","total":"546","sectionRank":"7","gradeRank":"35"},{"civil":"42","name":"اليزن بن سعيد بن خلفان حمد الهديفي","grade":"خامس","section":"4","total":"543","sectionRank":"8","gradeRank":"37"},{"civil":"43","name":"فهد بن صالح بن سالم سليم المبسلي","grade":"خامس","section":"4","total":"542","sectionRank":"9","gradeRank":"38"},{"civil":"44","name":"الأيهم بن ناصر بن عبدالله مسلم الشبيبي","grade":"خامس","section":"4","total":"537","sectionRank":"10","gradeRank":"40"},{"civil":"45","name":"محمد بن سلطان بن راشد علي الجابري","grade":"خامس","section":"4","total":"537","sectionRank":"10","gradeRank":"41"},{"civil":"46","name":"مجد بن أحمد بن خلفان علي الجابري","grade":"خامس","section":"5","total":"597","sectionRank":"1","gradeRank":"2"},{"civil":"47","name":"الأيهم بن اليقظان بن أحمد محمد الشبيبي","grade":"خامس","section":"5","total":"596","sectionRank":"2","gradeRank":"3"},{"civil":"48","name":"سعود بن بدر بن علي بدر الجابري","grade":"خامس","section":"5","total":"576","sectionRank":"3","gradeRank":"18"},{"civil":"49","name":"سيف بن سلطان بن أحمد محمد الجابري","grade":"خامس","section":"5","total":"575","sectionRank":"4","gradeRank":"19"},{"civil":"50","name":"اسماعيل محمد احمد محى الدين","grade":"خامس","section":"5","total":"574","sectionRank":"5","gradeRank":"20"},{"civil":"51","name":"الأزد بن جمال بن ناصر سعيد الشيذاني","grade":"خامس","section":"5","total":"573","sectionRank":"6","gradeRank":"21"},{"civil":"52","name":"حارب بن سعيد بن حارب حمود الحبسي","grade":"خامس","section":"5","total":"554","sectionRank":"7","gradeRank":"33"},{"civil":"53","name":"محمدالامين خالد محمدالامين خالد","grade":"خامس","section":"5","total":"553","sectionRank":"8","gradeRank":"34"},{"civil":"54","name":"أحمد بن محمد بن سالم حافظ الحبسي","grade":"خامس","section":"5","total":"532","sectionRank":"9","gradeRank":"42"},{"civil":"55","name":"سالم بن مسلم بن محمد سالم الوهيبي","grade":"خامس","section":"5","total":"522","sectionRank":"10","gradeRank":"43"},{"civil":"56","name":"حمود بن محمد بن حمود سيف الشيذاني","grade":"خامس","section":"6","total":"598","sectionRank":"1","gradeRank":"1"},{"civil":"57","name":"يزن بن داود بن سليمان سعيد الحبسي","grade":"خامس","section":"6","total":"582","sectionRank":"2","gradeRank":"13"},{"civil":"58","name":"المعتصم بن بشير بن مسلم سليم الحبسي","grade":"خامس","section":"6","total":"582","sectionRank":"2","gradeRank":"13"},{"civil":"59","name":"ناصر بن محمد بن ناصر سليمان الحبسي","grade":"خامس","section":"6","total":"576","sectionRank":"3","gradeRank":"18"},{"civil":"60","name":"محمد بن زايد بن سليمان محمد الشرجي","grade":"خامس","section":"6","total":"574","sectionRank":"4","gradeRank":"20"},{"civil":"61","name":"يزيد احمد محمد عبدالعظيم","grade":"خامس","section":"6","total":"572","sectionRank":"5","gradeRank":"22"},{"civil":"62","name":"محمد بن عيسى بن سعيد علي الجابري","grade":"خامس","section":"6","total":"571","sectionRank":"6","gradeRank":"23"},{"civil":"63","name":"أحمد بن سعيد بن سعود علي المونسي","grade":"خامس","section":"6","total":"571","sectionRank":"6","gradeRank":"23"},{"civil":"64","name":"سنان بن سعيد بن خلفان عمبر القناعي","grade":"خامس","section":"6","total":"570","sectionRank":"7","gradeRank":"24"},{"civil":"65","name":"بشار بن محمد بن سعيد حمد الحبسي","grade":"خامس","section":"6","total":"564","sectionRank":"8","gradeRank":"27"},{"civil":"66","name":"سلطان بن علي بن جمعه سعيد الحبسي","grade":"خامس","section":"6","total":"556","sectionRank":"9","gradeRank":"32"},{"civil":"67","name":"معز بن احمد بن مبروك النوبى الحبسى","grade":"خامس","section":"6","total":"554","sectionRank":"10","gradeRank":"33"},{"civil":"68","name":"أسامه بن محمد بن سليمان منين الحارثي","grade":"خامس","section":"7","total":"589","sectionRank":"1","gradeRank":"7"},{"civil":"69","name":"علي بن أحمد بن علي سالم الحبسي","grade":"خامس","section":"7","total":"585","sectionRank":"2","gradeRank":"10"},{"civil":"70","name":"سعيد بن سيف بن سعيد خميس الحبسي","grade":"خامس","section":"7","total":"584","sectionRank":"3","gradeRank":"11"},{"civil":"71","name":"يوسف بن سلطان بن سعيد عبدالله الحبسي","grade":"خامس","section":"7","total":"583","sectionRank":"4","gradeRank":"12"},{"civil":"72","name":"خالد بن وليد بن احمد سعيد الهنائى","grade":"خامس","section":"7","total":"579","sectionRank":"5","gradeRank":"15"},{"civil":"73","name":"ناصر بن عبدالله بن علي عامر الجابري","grade":"خامس","section":"7","total":"575","sectionRank":"6","gradeRank":"19"},{"civil":"74","name":"خالد بن زاهر بن حمد محمد الحبسي","grade":"خامس","section":"7","total":"574","sectionRank":"7","gradeRank":"20"},{"civil":"75","name":"حمد بن هلال بن مالك برغش الجابري","grade":"خامس","section":"7","total":"572","sectionRank":"8","gradeRank":"22"},{"civil":"76","name":"الفيصل بن سامي بن محمد حمد الحبسي","grade":"خامس","section":"7","total":"569","sectionRank":"9","gradeRank":"25"},{"civil":"77","name":"يعرب بن سعيد بن خلفان سليّم الحبسي","grade":"خامس","section":"7","total":"567","sectionRank":"10","gradeRank":"26"},{"civil":"78","name":"محمد بن خالد بن محمد حمود الجابري","grade":"السادس","section":"1","total":"591","sectionRank":"1","gradeRank":"3"},{"civil":"79","name":"سلطان بن سيف بن خلفان مصبح الحبسي","grade":"السادس","section":"1","total":"582","sectionRank":"2","gradeRank":"12"},{"civil":"80","name":"صالح بن عيسى بن سعيد سالم الحبسي","grade":"السادس","section":"1","total":"556","sectionRank":"3","gradeRank":"25"},{"civil":"81","name":"سيف بن متعب بن سلطان محمد الحبسي","grade":"السادس","section":"1","total":"547","sectionRank":"4","gradeRank":"30"},{"civil":"82","name":"حمد بن سلطان بن حمد سعيد الجعفري","grade":"السادس","section":"1","total":"542","sectionRank":"5","gradeRank":"33"},{"civil":"83","name":"المنذر بن حمود بن سعيد زهران النعماني","grade":"السادس","section":"1","total":"540","sectionRank":"6","gradeRank":"34"},{"civil":"84","name":"الخطاب بن سلطان بن محمد خالد الحبسي","grade":"السادس","section":"1","total":"540","sectionRank":"6","gradeRank":"34"},{"civil":"85","name":"أحمد بن صالح بن خلفان راشد النعماني","grade":"السادس","section":"1","total":"540","sectionRank":"6","gradeRank":"34"},{"civil":"86","name":"فهد بن عبدالكريم بن عبدالله حميد الحارثي","grade":"السادس","section":"1","total":"538","sectionRank":"7","gradeRank":"35"},{"civil":"87","name":"سالم بن سليم بن سالم سيف المبسلي","grade":"السادس","section":"1","total":"535","sectionRank":"8","gradeRank":"38"},{"civil":"88","name":"سلطان بن علي بن سالم عيسى البوسعيدي","grade":"السادس","section":"1","total":"529","sectionRank":"9","gradeRank":"40"},{"civil":"89","name":"عبدالله بن سيف بن سليمان محمد الشرجي","grade":"السادس","section":"1","total":"511","sectionRank":"10","gradeRank":"45"},{"civil":"90","name":"معاذ بن احمد بن محمد سالم الحبسي","grade":"السادس","section":"2","total":"597","sectionRank":"1","gradeRank":"1"},{"civil":"91","name":"عمر بن عبدالعزيز بن راشد سليّم الشيذاني","grade":"السادس","section":"2","total":"586","sectionRank":"2","gradeRank":"8"},{"civil":"92","name":"سعيد بن علي بن سعيد عبدالله الراشدي","grade":"السادس","section":"2","total":"575","sectionRank":"3","gradeRank":"16"},{"civil":"93","name":"خالد بن سالم بن جمعه إبراهيم البلوشي","grade":"السادس","section":"2","total":"570","sectionRank":"4","gradeRank":"17"},{"civil":"94","name":"عبد الرحمن ناجح  قرنى","grade":"السادس","section":"2","total":"569","sectionRank":"5","gradeRank":"18"},{"civil":"95","name":"سعيد بن عامر بن سعيد علي الوهيبي","grade":"السادس","section":"2","total":"568","sectionRank":"6","gradeRank":"19"},{"civil":"96","name":"بدر بن ناصر بن سليّم خميس الجابرى","grade":"السادس","section":"2","total":"554","sectionRank":"7","gradeRank":"26"},{"civil":"97","name":"حمزة بن صالح بن سليّم سليمان الحبسي","grade":"السادس","section":"2","total":"553","sectionRank":"8","gradeRank":"27"},{"civil":"98","name":"عبدالله بن علي بن عبيد مرهون الحبسي","grade":"السادس","section":"2","total":"552","sectionRank":"9","gradeRank":"28"},{"civil":"99","name":"ناصر بن راشد بن ناصر سليمان الحبسي","grade":"السادس","section":"2","total":"537","sectionRank":"10","gradeRank":"36"},{"civil":"100","name":"ناصر بن داود بن ناصر سعيد النعماني","grade":"السادس","section":"3","total":"592","sectionRank":"1","gradeRank":"2"},{"civil":"101","name":"عبدالعزيز بن محمد بن احمد صالح الحبسي","grade":"السادس","section":"3","total":"590","sectionRank":"2","gradeRank":"4"},{"civil":"102","name":"محمد بن يوسف بن ناصر محمد الحبسي","grade":"السادس","section":"3","total":"583","sectionRank":"3","gradeRank":"11"},{"civil":"103","name":"علي بن ناصر بن حمد محمد الحبسي","grade":"السادس","section":"3","total":"579","sectionRank":"4","gradeRank":"14"},{"civil":"104","name":"إبراهيم بن أحمد بن حمد حمود الحبسي","grade":"السادس","section":"3","total":"563","sectionRank":"5","gradeRank":"20"},{"civil":"105","name":"أنس بن سعيد بن حمد سعيد الشبيبي","grade":"السادس","section":"3","total":"561","sectionRank":"6","gradeRank":"22"},{"civil":"106","name":"نعمان بن سعيد بن محمد حسن النعماني","grade":"السادس","section":"3","total":"559","sectionRank":"7","gradeRank":"23"},{"civil":"107","name":"عمر بن يوسف بن حمد محمد الحبسي","grade":"السادس","section":"3","total":"546","sectionRank":"8","gradeRank":"31"},{"civil":"108","name":"سعيد بن خالد بن سعيد عدي البرواني","grade":"السادس","section":"3","total":"545","sectionRank":"9","gradeRank":"32"},{"civil":"109","name":"بلعرب بن سلطان بن عامر محمد الحبسي","grade":"السادس","section":"3","total":"536","sectionRank":"10","gradeRank":"37"},{"civil":"110","name":"هلال بن بدر بن هلال سعيد الحبسي","grade":"السادس","section":"4","total":"588","sectionRank":"1","gradeRank":"6"},{"civil":"111","name":"محمد بن داود بن سليمان سعود الحبسي","grade":"السادس","section":"4","total":"584","sectionRank":"2","gradeRank":"10"},{"civil":"112","name":"عماد بن حمود بن سالم خميس الحبسي","grade":"السادس","section":"4","total":"581","sectionRank":"3","gradeRank":"13"},{"civil":"113","name":"عمرو أشرف عكاشه عوض","grade":"السادس","section":"4","total":"579","sectionRank":"4","gradeRank":"14"},{"civil":"114","name":"سليمان بن داود بن سليمان سعيد الحبسي","grade":"السادس","section":"4","total":"577","sectionRank":"5","gradeRank":"15"},{"civil":"115","name":"حسن ايمن  شبراوى محمد  اسماعيل العباسى","grade":"السادس","section":"4","total":"569","sectionRank":"6","gradeRank":"18"},{"civil":"116","name":"عبدالرحمن محمد  محمد  عوض   عثمان","grade":"السادس","section":"4","total":"563","sectionRank":"7","gradeRank":"20"},{"civil":"117","name":"سعيد بن حمدان بن سعيد حمد الحبسي","grade":"السادس","section":"4","total":"546","sectionRank":"8","gradeRank":"31"},{"civil":"118","name":"حمد بن الصغير بن العبد دغيميل الحبسي","grade":"السادس","section":"4","total":"531","sectionRank":"9","gradeRank":"39"},{"civil":"119","name":"سالم بن محمد بن سالم راشد الحبسي","grade":"السادس","section":"4","total":"529","sectionRank":"10","gradeRank":"40"},{"civil":"120","name":"أوس بن احمد بن سليم خلفان الحبسي","grade":"السادس","section":"5","total":"589","sectionRank":"1","gradeRank":"5"},{"civil":"121","name":"محمد بن محمود بن المر خميس الفارسي","grade":"السادس","section":"5","total":"581","sectionRank":"2","gradeRank":"13"},{"civil":"122","name":"أحمد بن يوسف بن عبدالله حمد الحبسي","grade":"السادس","section":"5","total":"579","sectionRank":"3","gradeRank":"14"},{"civil":"123","name":"اياد عابدين عوض    فضل الله","grade":"السادس","section":"5","total":"562","sectionRank":"4","gradeRank":"21"},{"civil":"124","name":"محمد بن زايد بن خليفه خلفان العيسري","grade":"السادس","section":"5","total":"554","sectionRank":"5","gradeRank":"26"},{"civil":"125","name":"ابراهيم بن جمال بن ناصر سعيد الشيذاني","grade":"السادس","section":"5","total":"551","sectionRank":"6","gradeRank":"29"},{"civil":"126","name":"علي بن سليمان بن سعود علي الجابري","grade":"السادس","section":"5","total":"546","sectionRank":"7","gradeRank":"31"},{"civil":"127","name":"عبدالرحمن بن أحمد بن سعيد سيف البوسعيدي","grade":"السادس","section":"5","total":"546","sectionRank":"7","gradeRank":"31"},{"civil":"128","name":"محمد بن راشد بن سالم حمود الطوقي","grade":"السادس","section":"5","total":"516","sectionRank":"8","gradeRank":"44"},{"civil":"129","name":"خالد بن ناصر بن سالم مرهون الحبسي","grade":"السادس","section":"5","total":"504","sectionRank":"9","gradeRank":"46"},{"civil":"130","name":"عمر بن محمد بن مسعود سالم المبسلي","grade":"السادس","section":"5","total":"501","sectionRank":"10","gradeRank":"47"},{"civil":"131","name":"عبدالله بن يحيى بن عبدالله حمد الحبسي","grade":"السادس","section":"6","total":"590","sectionRank":"1","gradeRank":"4"},{"civil":"132","name":"حمد بن صالح بن حمد راشد المطاعني","grade":"السادس","section":"6","total":"587","sectionRank":"2","gradeRank":"7"},{"civil":"133","name":"علي بن سالم بن خلفان محمد الحبسي","grade":"السادس","section":"6","total":"585","sectionRank":"3","gradeRank":"9"},{"civil":"134","name":"فهد بن سيف بن مسلم سليّم الهاشمي","grade":"السادس","section":"6","total":"557","sectionRank":"4","gradeRank":"24"},{"civil":"135","name":"ليث بن خالد بن سعيد حمد الحبسي","grade":"السادس","section":"6","total":"529","sectionRank":"5","gradeRank":"41"},{"civil":"136","name":"معضد بن جاسم بن سعيد سالم المبيحسي","grade":"السادس","section":"6","total":"523","sectionRank":"6","gradeRank":"42"},{"civil":"137","name":"هلال بن سالم بن هلال خربوش الحبسي","grade":"السادس","section":"6","total":"519","sectionRank":"7","gradeRank":"43"},{"civil":"138","name":"محمد بن ناصر بن محمد ناصر الهديفي","grade":"السادس","section":"6","total":"511","sectionRank":"8","gradeRank":"45"},{"civil":"139","name":"محمد بن سيف بن عبدالله سيف الحبسي","grade":"السادس","section":"6","total":"504","sectionRank":"9","gradeRank":"46"},{"civil":"140","name":"سعيد بن علي بن سعيد علي الحبسي","grade":"السادس","section":"6","total":"503","sectionRank":"10","gradeRank":"47"},{"civil":"141","name":"محمد بن سالم بن سعيد عبدالله الحبسي","grade":"السابع","section":"1","total":"593","sectionRank":"1","gradeRank":"2"},{"civil":"142","name":"أحمد بن سلطان بن سيف صالح الحبسي","grade":"السابع","section":"1","total":"587","sectionRank":"2","gradeRank":"6"},{"civil":"143","name":"حمود بن ناصر بن خلفان حمد الحبسي","grade":"السابع","section":"1","total":"582","sectionRank":"3","gradeRank":"10"},{"civil":"144","name":"سيف بن سعود بن سيف الصغير القنوبي","grade":"السابع","section":"1","total":"582","sectionRank":"3","gradeRank":"10"},{"civil":"145","name":"أحمد بن عدي بن أحمد خالد الحارثي","grade":"السابع","section":"1","total":"573","sectionRank":"4","gradeRank":"15"},{"civil":"146","name":"سعود بن بدر بن سعود علي المونسي","grade":"السابع","section":"1","total":"573","sectionRank":"4","gradeRank":"15"},{"civil":"147","name":"عبدالعزيز بن سالم بن المر سليمان الهنائي","grade":"السابع","section":"1","total":"569","sectionRank":"5","gradeRank":"18"},{"civil":"148","name":"سلطان بن بدر بن سلطان محمد الحبسي","grade":"السابع","section":"1","total":"567","sectionRank":"6","gradeRank":"20"},{"civil":"149","name":"فهد بن محمود بن محمد الصغير القنوبي","grade":"السابع","section":"1","total":"558","sectionRank":"7","gradeRank":"23"},{"civil":"150","name":"سعيد بن سالم بن عامر سعيد الشيذاني","grade":"السابع","section":"1","total":"555","sectionRank":"8","gradeRank":"25"},{"civil":"151","name":"أحمد بن عبدالله بن علي سعيد البوسعيدي","grade":"السابع","section":"1","total":"539","sectionRank":"9","gradeRank":"35"},{"civil":"152","name":"نواف بن فهد بن سعيد سليمان الحجري","grade":"السابع","section":"1","total":"516","sectionRank":"10","gradeRank":"42"},{"civil":"153","name":"عبدالله بن فيصل بن حميد محمد الحبسي","grade":"السابع","section":"2","total":"590","sectionRank":"1","gradeRank":"4"},{"civil":"154","name":"ليث بن سالم بن محمد حمد الشيذاني","grade":"السابع","section":"2","total":"585","sectionRank":"2","gradeRank":"8"},{"civil":"155","name":"حمد بن زاهر بن حمد محمد الحبسي","grade":"السابع","section":"2","total":"583","sectionRank":"3","gradeRank":"9"},{"civil":"156","name":"مؤيّد بن أحمد بن حمد حمود الحبسي","grade":"السابع","section":"2","total":"557","sectionRank":"4","gradeRank":"24"},{"civil":"157","name":"عبد الرحمن بن سالم بن سليمان سالم الحبسي","grade":"السابع","section":"2","total":"553","sectionRank":"5","gradeRank":"27"},{"civil":"158","name":"راشد بن أحمد بن راشد سعيد الحبسي","grade":"السابع","section":"2","total":"549","sectionRank":"6","gradeRank":"30"},{"civil":"159","name":"هزاع بن عبدالله بن سعيد خربوش الحبسي","grade":"السابع","section":"2","total":"544","sectionRank":"7","gradeRank":"32"},{"civil":"160","name":"محمد بن سليم بن حميد سليم الحارثى","grade":"السابع","section":"2","total":"542","sectionRank":"8","gradeRank":"33"},{"civil":"161","name":"محمد بن سمير بن سليمان عبدالله الحجري","grade":"السابع","section":"2","total":"531","sectionRank":"9","gradeRank":"38"},{"civil":"162","name":"محمد بن يونس بن محمد عبدالله الشيذاني","grade":"السابع","section":"2","total":"517","sectionRank":"10","gradeRank":"41"},{"civil":"163","name":"منصور بن محمد بن منصور ناصر الجابري","grade":"السابع","section":"3","total":"588","sectionRank":"1","gradeRank":"5"},{"civil":"164","name":"علي بن محسن بن علي عامر البلوشي","grade":"السابع","section":"3","total":"588","sectionRank":"1","gradeRank":"5"},{"civil":"165","name":"سعيد بن سالم بن سعيد سليمان الحبسى","grade":"السابع","section":"3","total":"586","sectionRank":"2","gradeRank":"7"},{"civil":"166","name":"سعيد بن أحمد بن سعيد سيف الشيذاني","grade":"السابع","section":"3","total":"581","sectionRank":"3","gradeRank":"11"},{"civil":"167","name":"وليد بن جاسم بن حمود عبدالله الحبسي","grade":"السابع","section":"3","total":"581","sectionRank":"3","gradeRank":"11"},{"civil":"168","name":"أحمد بن موسى بن هلال الصقير العامري","grade":"السابع","section":"3","total":"573","sectionRank":"4","gradeRank":"15"},{"civil":"169","name":"سعود بن سليمان بن سعود علي الجابري","grade":"السابع","section":"3","total":"570","sectionRank":"5","gradeRank":"17"},{"civil":"170","name":"محمد بن على بن زاهر محمد الشيذانى","grade":"السابع","section":"3","total":"556","sectionRank":"6","gradeRank":"25"},{"civil":"171","name":"عبد الرحمن بن سعود بن سعيد سلطان الحبسي","grade":"السابع","section":"3","total":"555","sectionRank":"7","gradeRank":"25"},{"civil":"172","name":"أمجد بن سلطان بن سالم محمد الأزكي","grade":"السابع","section":"3","total":"552","sectionRank":"8","gradeRank":"29"},{"civil":"173","name":"المعتز بن سالم بن عبدالله ناجم الحجري","grade":"السابع","section":"3","total":"538","sectionRank":"9","gradeRank":"36"},{"civil":"174","name":"محمد  عادل محمد  التهامى أبوالفتوح","grade":"السابع","section":"3","total":"529","sectionRank":"10","gradeRank":"39"},{"civil":"175","name":"سيف بن محمد بن حمود سيف الرواحي","grade":"السابع","section":"4","total":"595","sectionRank":"1","gradeRank":"1"},{"civil":"176","name":"احمد اشرف محمد محمد مهدي","grade":"السابع","section":"4","total":"593","sectionRank":"2","gradeRank":"2"},{"civil":"177","name":"هشام بن محمد بن حمد عامر الهاشمي","grade":"السابع","section":"4","total":"591","sectionRank":"3","gradeRank":"3"},{"civil":"178","name":"أنس بن مالك بن علي سعود الجابري","grade":"السابع","section":"4","total":"582","sectionRank":"4","gradeRank":"10"},{"civil":"179","name":"سيف بن أحمد بن مسلم سالم الحارثي","grade":"السابع","section":"4","total":"579","sectionRank":"5","gradeRank":"12"},{"civil":"180","name":"محمد بن عبدالله بن سالم مرهون الحبسي","grade":"السابع","section":"4","total":"575","sectionRank":"6","gradeRank":"13"},{"civil":"181","name":"تميم بن ابراهيم بن سعيد حمد الحبسى","grade":"السابع","section":"4","total":"556","sectionRank":"7","gradeRank":"25"},{"civil":"182","name":"سعيد بن أحمد بن سعيد ناصر المعشري","grade":"السابع","section":"4","total":"549","sectionRank":"8","gradeRank":"30"},{"civil":"183","name":"علي بن محمد بن حمد سالم العامري","grade":"السابع","section":"4","total":"539","sectionRank":"9","gradeRank":"35"},{"civil":"184","name":"زياد بن ماجد بن سلطان حمود الشيذاني","grade":"السابع","section":"4","total":"536","sectionRank":"10","gradeRank":"37"},{"civil":"185","name":"يوسف بن أحمد بن سالمين حافظ الحبسي","grade":"السابع","section":"5","total":"591","sectionRank":"1","gradeRank":"3"},{"civil":"186","name":"مصطفى  ابراهيم حمدون محمد  عبداللطيف","grade":"السابع","section":"5","total":"590","sectionRank":"2","gradeRank":"4"},{"civil":"187","name":"علي بن عبدالله بن سيف علي البوسعيدي","grade":"السابع","section":"5","total":"575","sectionRank":"3","gradeRank":"13"},{"civil":"188","name":"عمر بن خلفان بن بريك عبدالله البوسعيدي","grade":"السابع","section":"5","total":"570","sectionRank":"4","gradeRank":"17"},{"civil":"189","name":"عبدالله بن خالد بن سعيد هاشل الحبسي","grade":"السابع","section":"5","total":"560","sectionRank":"5","gradeRank":"22"},{"civil":"190","name":"محمد بن عبدالله بن سعيد ناصر الحبسي","grade":"السابع","section":"5","total":"546","sectionRank":"6","gradeRank":"31"},{"civil":"191","name":"عبدالله بن محمد بن عبدالله خلفان الجابري","grade":"السابع","section":"5","total":"541","sectionRank":"7","gradeRank":"34"},{"civil":"192","name":"محمد بن ناصر بن محمد خميس المبسلى","grade":"السابع","section":"5","total":"536","sectionRank":"8","gradeRank":"37"},{"civil":"193","name":"اياد بن سعيد بن خلفان حمد الهديفي","grade":"السابع","section":"5","total":"518","sectionRank":"9","gradeRank":"40"},{"civil":"194","name":"حميد بن عبدالله بن حميد حمد النعماني","grade":"السابع","section":"5","total":"510","sectionRank":"10","gradeRank":"43"},{"civil":"195","name":"امجد ايهاب مصطفى محمد","grade":"السابع","section":"6","total":"581","sectionRank":"1","gradeRank":"11"},{"civil":"196","name":"يوسف بن عبدالله بن محمد علي الحبسي","grade":"السابع","section":"6","total":"574","sectionRank":"2","gradeRank":"14"},{"civil":"197","name":"أحمد بن عبدالله بن صالح أحمد البرواني","grade":"السابع","section":"6","total":"571","sectionRank":"3","gradeRank":"16"},{"civil":"198","name":"خالد بن زاهر بن سعود أحمد الحبسي","grade":"السابع","section":"6","total":"568","sectionRank":"4","gradeRank":"19"},{"civil":"199","name":"الياس بن سالم بن سليمان حميد المبسلي","grade":"السابع","section":"6","total":"564","sectionRank":"5","gradeRank":"21"},{"civil":"200","name":"اياد بن هلال بن عبدالله سالم المنذري","grade":"السابع","section":"6","total":"558","sectionRank":"6","gradeRank":"23"},{"civil":"201","name":"مؤيد بن هلال بن عبدالله سالم المنذري","grade":"السابع","section":"6","total":"554","sectionRank":"7","gradeRank":"26"},{"civil":"202","name":"راكان بن أحمد بن محمد راشد الحبسي","grade":"السابع","section":"6","total":"553","sectionRank":"8","gradeRank":"28"},{"civil":"203","name":"مؤمن عادل أحمد محمد عيد","grade":"السابع","section":"6","total":"546","sectionRank":"9","gradeRank":"31"},{"civil":"204","name":"عبد الرحمن بن سعود بن حمد عبدالله الحبسي","grade":"السابع","section":"6","total":"539","sectionRank":"10","gradeRank":"35"},{"civil":"205","name":"جواد بن حمود بن سالم خميس الحبسي","grade":"الثامن","section":"1","total":"575","sectionRank":"1","gradeRank":"9"},{"civil":"206","name":"يوسف بن بدر بن سيف سعيد الحبسي","grade":"الثامن","section":"1","total":"574","sectionRank":"2","gradeRank":"10"},{"civil":"207","name":"محمد بن اسحاق بن صالح أحمد الحبسي","grade":"الثامن","section":"1","total":"567","sectionRank":"3","gradeRank":"14"},{"civil":"208","name":"أحمد بن محمد بن علي محمد الحبسي","grade":"الثامن","section":"1","total":"553","sectionRank":"4","gradeRank":"21"},{"civil":"209","name":"نصر بن ناصر بن سعيد سيف البوسعيدي","grade":"الثامن","section":"1","total":"540","sectionRank":"5","gradeRank":"28"},{"civil":"210","name":"علي بن سعود بن علي محمد الحبسي","grade":"الثامن","section":"1","total":"515","sectionRank":"6","gradeRank":"34"},{"civil":"211","name":"أحمد بن صلاح بن أحمد محمد الشبيبي","grade":"الثامن","section":"1","total":"512","sectionRank":"7","gradeRank":"35"},{"civil":"212","name":"سيف بن نبهان بن منصور ناصر الهنائي","grade":"الثامن","section":"1","total":"499","sectionRank":"8","gradeRank":"36"},{"civil":"213","name":"أحمد بن جمعه بن سعيد سبح الحبسي","grade":"الثامن","section":"1","total":"498","sectionRank":"9","gradeRank":"37"},{"civil":"214","name":"يحيى بن محمد بن سليم مبروك الحبسي","grade":"الثامن","section":"1","total":"493","sectionRank":"10","gradeRank":"38"},{"civil":"215","name":"جيفر بن سيف بن سعيد سبح الحبسي","grade":"الثامن","section":"2","total":"599","sectionRank":"1","gradeRank":"1"},{"civil":"216","name":"يوسف بن خالد بن علي سعود الجابري","grade":"الثامن","section":"2","total":"577","sectionRank":"2","gradeRank":"8"},{"civil":"217","name":"أحمد بن سليمان بن سليـّم خميس الجابري","grade":"الثامن","section":"2","total":"574","sectionRank":"3","gradeRank":"10"},{"civil":"218","name":"سليمان بن خليل بن عبدالله سعيد الراشدي","grade":"الثامن","section":"2","total":"555","sectionRank":"4","gradeRank":"20"},{"civil":"219","name":"صهيب بن ابراهيم بن محمد حارب الحبسي","grade":"الثامن","section":"2","total":"555","sectionRank":"4","gradeRank":"20"},{"civil":"220","name":"أحمد بن ناصر بن محمد حمود الحبسي","grade":"الثامن","section":"2","total":"544","sectionRank":"5","gradeRank":"26"},{"civil":"221","name":"الخليل بن خالد بن سعيد مبروك الحبسي","grade":"الثامن","section":"2","total":"544","sectionRank":"5","gradeRank":"26"},{"civil":"222","name":"سعيد بن أحمد بن سعيد سيف البوسعيدي","grade":"الثامن","section":"2","total":"540","sectionRank":"6","gradeRank":"28"},{"civil":"223","name":"عبدالله بن حارب بن محمد حارب الحبسي","grade":"الثامن","section":"2","total":"538","sectionRank":"7","gradeRank":"29"},{"civil":"224","name":"محمد بن صالح بن محمد مسعود الجابري","grade":"الثامن","section":"2","total":"536","sectionRank":"8","gradeRank":"30"},{"civil":"225","name":"عمر بن محمد بن احمد صالح الحبسي","grade":"الثامن","section":"2","total":"521","sectionRank":"9","gradeRank":"32"},{"civil":"226","name":"محمد بن أحمد بن سعيد سيف الشيذاني","grade":"الثامن","section":"2","total":"517","sectionRank":"10","gradeRank":"33"},{"civil":"227","name":"سلطان بن محمود بن سلطان حمد العيسري","grade":"الثامن","section":"3","total":"586","sectionRank":"1","gradeRank":"4"},{"civil":"228","name":"القاسم بن عبدالله بن صالح أحمد البرواني","grade":"الثامن","section":"3","total":"582","sectionRank":"2","gradeRank":"6"},{"civil":"229","name":"وليد بن حمود بن سالم حمود الشيذاني","grade":"الثامن","section":"3","total":"577","sectionRank":"3","gradeRank":"8"},{"civil":"230","name":"صهيب بن طاهر بن مبروك خلفان الحبسي","grade":"الثامن","section":"3","total":"574","sectionRank":"4","gradeRank":"10"},{"civil":"231","name":"سعيد بن أحمد بن سعيد محمد الحبسي","grade":"الثامن","section":"3","total":"571","sectionRank":"5","gradeRank":"12"},{"civil":"232","name":"محمد بن حسين بن محمد سليم الشيذاني","grade":"الثامن","section":"3","total":"570","sectionRank":"6","gradeRank":"13"},{"civil":"233","name":"المهنا بن يوسف بن حمد سليمان الحبسي","grade":"الثامن","section":"3","total":"567","sectionRank":"7","gradeRank":"14"},{"civil":"234","name":"محمد بن سامي بن محمد حمد الحبسي","grade":"الثامن","section":"3","total":"553","sectionRank":"8","gradeRank":"21"},{"civil":"235","name":"أصيل بن سعيد بن سيف سالمين المبسلي","grade":"الثامن","section":"3","total":"547","sectionRank":"9","gradeRank":"23"},{"civil":"236","name":"علي بن حمود بن محمد علي المالكي","grade":"الثامن","section":"3","total":"546","sectionRank":"10","gradeRank":"24"},{"civil":"237","name":"الفضل بن محمد بن سعيد سليمان الحارثي","grade":"الثامن","section":"4","total":"599","sectionRank":"1","gradeRank":"1"},{"civil":"238","name":"سلطان بن أحمد بن سعيد سالم الحجري","grade":"الثامن","section":"4","total":"587","sectionRank":"2","gradeRank":"3"},{"civil":"239","name":"طارق بن ناصر بن احمد محمد الشبيبي","grade":"الثامن","section":"4","total":"575","sectionRank":"3","gradeRank":"9"},{"civil":"240","name":"اياس بن محمد بن راشد شون الجابري","grade":"الثامن","section":"4","total":"572","sectionRank":"4","gradeRank":"11"},{"civil":"241","name":"يامن بن يعقوب بن سعيد عبدالله السيابي","grade":"الثامن","section":"4","total":"559","sectionRank":"5","gradeRank":"17"},{"civil":"242","name":"محمد بن راشد بن عامر محمد الحبسي","grade":"الثامن","section":"4","total":"556","sectionRank":"6","gradeRank":"19"},{"civil":"243","name":"حمود بن عبدالله بن خلفان حمود الجابري","grade":"الثامن","section":"4","total":"548","sectionRank":"7","gradeRank":"22"},{"civil":"244","name":"سهيل بن سعد بن سعيد سيف الشيذاني","grade":"الثامن","section":"4","total":"546","sectionRank":"8","gradeRank":"24"},{"civil":"245","name":"مازن بن أحمد بن ناصر احمد الرواحي","grade":"الثامن","section":"4","total":"545","sectionRank":"9","gradeRank":"25"},{"civil":"246","name":"أنس بن صالح بن جمعه سليـّم الشيذاني","grade":"الثامن","section":"4","total":"534","sectionRank":"10","gradeRank":"31"},{"civil":"247","name":"عبدالله بن احمد بن خالد عامر الحبسي","grade":"الثامن","section":"5","total":"591","sectionRank":"1","gradeRank":"2"},{"civil":"248","name":"سلطان بن محمد بن سالم حمدون القنوبي","grade":"الثامن","section":"5","total":"583","sectionRank":"2","gradeRank":"5"},{"civil":"249","name":"أحمد بن علي بن سيف خربوش الحبسي","grade":"الثامن","section":"5","total":"582","sectionRank":"3","gradeRank":"6"},{"civil":"250","name":"محمد بن سلطان بن حمد سعيد الجعفري","grade":"الثامن","section":"5","total":"579","sectionRank":"4","gradeRank":"7"},{"civil":"251","name":"ناصر بن هلال بن حمود خلفان الجابري","grade":"الثامن","section":"5","total":"560","sectionRank":"5","gradeRank":"16"},{"civil":"252","name":"يوسف بن أحمد بن سليّم خلفان الحبسي","grade":"الثامن","section":"5","total":"558","sectionRank":"6","gradeRank":"18"},{"civil":"253","name":"حمدان بن محمد بن سالم سعيد القنوبي","grade":"الثامن","section":"5","total":"556","sectionRank":"7","gradeRank":"19"},{"civil":"254","name":"أحمد بن صالح بن سعيد الشين النعماني","grade":"الثامن","section":"5","total":"553","sectionRank":"8","gradeRank":"21"},{"civil":"255","name":"تميم بن حمد بن سليمان عامر الجابري","grade":"الثامن","section":"5","total":"545","sectionRank":"9","gradeRank":"25"},{"civil":"256","name":"خالد عاصم علي حسن","grade":"الثامن","section":"5","total":"542","sectionRank":"10","gradeRank":"27"}];
     let students = [];
 
     const tabs = document.querySelectorAll(".tab-btn");
@@ -742,11 +472,7 @@
     }
 
     function parsePastedData(text) {
-      const lines = String(text || "")
-        .split(/\r?\n/)
-        .map(line => line.trim())
-        .filter(Boolean);
-
+      const lines = String(text || "").split(/\r?\n/).map(line => line.trim()).filter(Boolean);
       if (!lines.length) throw new Error("يرجى لصق بيانات الطلبة أولًا.");
 
       let rows = lines.map(splitPasteLine).map(cells => cells.map(cell => String(cell || "").trim()));
@@ -766,28 +492,31 @@
         };
       }).filter(item => item.civil && item.name);
 
-      if (invalidRows.length) {
-        throw new Error("بعض الصفوف لا تحتوي على جميع الأعمدة السبعة المطلوبة. راجع الصفوف: " + invalidRows.join("، "));
-      }
+      if (invalidRows.length) throw new Error("بعض الصفوف لا تحتوي على جميع الأعمدة السبعة المطلوبة. راجع الصفوف: " + invalidRows.join("، "));
       if (!mapped.length) throw new Error("لم يتم العثور على سجلات صالحة. تأكد من ترتيب البيانات قبل اللصق.");
       return mapped;
     }
 
-    function saveData() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ records: students, uploadedAt: new Date().toLocaleString("ar-OM") }));
+    function saveData(label = new Date().toLocaleString("ar-OM")) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ records: students, uploadedAt: label }));
     }
 
     function loadData() {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (!saved) return;
-      try {
-        const parsed = JSON.parse(saved);
-        students = parsed.records || [];
-        renderPreview();
-        updateStats(parsed.uploadedAt || "—");
-      } catch (error) {
-        console.warn("تعذر قراءة البيانات المحفوظة", error);
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          students = parsed.records || [];
+          renderPreview();
+          updateStats(parsed.uploadedAt || "—");
+          return;
+        } catch (error) {
+          console.warn("تعذر قراءة البيانات المحفوظة", error);
+        }
       }
+      students = INITIAL_STUDENTS.slice();
+      renderPreview();
+      updateStats("بيانات مضمّنة");
     }
 
     function updateStats(uploadedAt = new Date().toLocaleString("ar-OM")) {
@@ -897,7 +626,7 @@
       const confirmed = confirm("هل أنت متأكد من حذف جميع بيانات الطلبة الأوائل الحالية؟ لا يمكن التراجع عن هذه العملية.");
       if (!confirmed) return;
       students = [];
-      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ records: [], uploadedAt: "—" }));
       renderPreview();
       updateStats("—");
       result.classList.remove("show");
